@@ -24,6 +24,10 @@ class taskGenerator{
         newParentProject.addTask(this.title,this.description,this.checked,this.priority,this.due_date)
     }
 
+    check(){
+        this.checked=!this.checked
+    }
+
 
 }
 
