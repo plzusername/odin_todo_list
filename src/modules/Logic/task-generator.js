@@ -6,6 +6,7 @@ class taskGenerator{
         this.checked=checked
         this.priority=priority
         this.due_date=due_date
+        this.id = parent_project.tasks.length
 
     }
 
@@ -16,8 +17,11 @@ class taskGenerator{
         this.due_date=newDueDate
     }
 
-    ediParentProject(newParentProject){
+    changeProject(newParentProject){
+        this.parent_project.removeTask(this.id,1)
         this.parent_project=newParentProject
+        this.id=newParentProject.tasks.length
+        newParentProject.addTask(this.title,this.description,this.checked,this.priority,this.due_date)
     }
 
 
