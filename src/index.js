@@ -17,5 +17,6 @@ c.addTask('Hi there', 'hi there', true, 'LOW', '12/12/2024')
 a.tasks[0].changeProject(c)
 d.addTask('Hi there', 'hi there', true, 'LOW', '12/12/2024')
 c.removeTask(0)
+b.tasks[0].check()
 
 console.log([a,b,c,d,e,af,aff,afdf])
