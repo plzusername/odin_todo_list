@@ -14,11 +14,11 @@ class trashSection{
 
     static restoreFromTrash(task){
         trashSection.removeFromTrash(task)
-        if (changeProject in task.prototype){
-             task.parent_project.addTask(task.title, task.description, task.checked, task.priority, task.due_date)
+        if ('editNote' in Object.getPrototypeOf(task)){
+            notesSection.addNote(task)
              return null
         }
-        notesSection.addNote(task)
+        task.parent_project.addTask(task.title, task.description, task.checked, task.priority, task.due_date)
 
     }
 
