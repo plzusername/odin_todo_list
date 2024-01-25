@@ -1,3 +1,5 @@
+import { notesSection } from "./notes-section"
+
 class trashSection{
     static trashedItems=[]
 
@@ -12,7 +14,12 @@ class trashSection{
 
     static restoreFromTrash(task){
         trashSection.removeFromTrash(task)
-        task.parent_project.addTask(task.title, task.description, task.checked, task.priority, task.due_date)
+        if (changeProject in task.prototype){
+             task.parent_project.addTask(task.title, task.description, task.checked, task.priority, task.due_date)
+             return null
+        }
+        notesSection.addNote(task)
+
     }
 
 }
