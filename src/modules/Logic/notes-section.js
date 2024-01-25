@@ -1,10 +1,11 @@
 import { trashSection } from "./trash-section"
+import { notesGenerator } from "./notes-generator" 
 
 class notesSection{
     static notes=[]
 
-    static addNote(note){
-        notesSection.notes.push(note)
+    static addNote(title, description){
+        notesSection.notes.push(new notesGenerator(title, description))
     }
 
     static removeNote(note){
