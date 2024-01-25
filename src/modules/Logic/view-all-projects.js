@@ -9,7 +9,7 @@ class viewAll{
               isBefore(task.due_date, add(new Date(), { days: daysIntoFuture })) &&
               isAfter(task.due_date, new Date())
             );
-          });
+        });
     }
 }
 
