@@ -15,3 +15,5 @@ function createElement(attributes, type = 'div', textContent = '', children = []
 
     return newElement
 }
+
+export{createElement}
