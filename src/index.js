@@ -9,14 +9,9 @@ let b=new projectGenerator()
 let c=new projectGenerator()
 
 
-a.addTask('Hi there', 'hi there', true, 'LOW', `${new Date(2028, 0, 20)}`)
-b.addTask('Hi there', 'hi there', true, 'LOW', `${new Date(2028, 0, 20)}`)
-c.addTask('Hi there', 'hi there', true, 'LOW', `${new Date(2028, 0, 20)}`)
+a.addTask('Hi there', 'hi there', true, 'LOW', `${new Date(2026, 9, 10)}`)
+b.addTask('Hi there', 'hi there', true, 'LOW', `${new Date(2024, 6, 24)}`)
+c.addTask('Hi there', 'hi there', true, 'LOW', `${new Date(2025, 3, 8)}`)
 
-notesSection.addNote('health plans', 'plans to get healthy')
-
-notesSection.removeNote(notesSection.notes[0])
-console.log(notesSection.notes)
-trashSection.restoreFromTrash(trashSection.trashedItems[0])
-console.log(trashSection.trashedItems)
-console.log(notesSection.notes)
+console.log(viewAll.filterTasksBasedOnDays(300))
+console.log(viewAll.projects)
