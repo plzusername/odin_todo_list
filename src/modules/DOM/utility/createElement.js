@@ -1,6 +1,6 @@
 import appendChildren from './add-Children-To-Element.js'
 
-function createElementt(attributes, type = 'div', textContent = '', children = []){
+function createElement(attributes, type = 'div', textContent = '', children = []){
 
     let newElement=document.createElement(type)
 
