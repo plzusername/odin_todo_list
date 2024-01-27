@@ -9,9 +9,9 @@ function createElement(attributes, type = 'div', textContent = '', children = []
     }
 
     const elementTextNode=document.createTextNode(textContent)
+    newElement.appendChild(elementTextNode)
     appendChildren(newElement, children)
 
-    newElement.appendChild(elementTextNode)
 
     return newElement
 }
