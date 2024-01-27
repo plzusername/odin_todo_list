@@ -7,16 +7,20 @@ class viewAll{
         let toBeFilteredArray=cloneDeep(viewAll.projects)
 
         toBeFilteredArray.forEach(project => {
-            project.tasks = project.tasks.filter(task => 
-              isBefore(task.due_date, add(new Date(), { days: daysIntoFuture })) &&
-              isAfter(task.due_date, new Date())
+            project.tasks = project.tasks.filter(function (task){
+                const beforeOrAfterToday = daysIntoFuture > 0 ? isAfter(task.due_date, new Date()) : isBefore(task.due_date, new Date())
+                const withinDayLimit = daysIntoFuture > 0 ? isBefore(task.due_date, add(new Date(), { days: daysIntoFuture })) : isAfter(task.due_date, add(new Date(), { days: daysIntoFuture }))
+
+                return beforeOrAfterToday && withinDayLimit
+            }
+
             );
         });
 
-        toBeFilteredArray = toBeFilteredArray.filter(project => project.tasks.length != 0)
-
-        return toBeFilteredArray
+        return toBeFilteredArray.filter(project => project.tasks.length != 0)
     }
 }
 
-export {viewAll}
+
+
+// export {viewAll}
