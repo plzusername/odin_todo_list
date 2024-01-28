@@ -1,5 +1,6 @@
 const { isBefore, isAfter, add  } = require("date-fns");
 const { cloneDeep } = require('lodash')
+import { filterEmptyProjects } from "./remove-empty-project";
 class viewAll{
     static projects = []
 
@@ -17,7 +18,7 @@ class viewAll{
             );
         });
 
-        return toBeFilteredArray.filter(project => project.tasks.length != 0)
+        return filterEmptyProjects(toBeFilteredArray)
     }
 }
 
