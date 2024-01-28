@@ -20,9 +20,9 @@ class projectGenerator{
         this.tasks.push(new taskGenerator(taskTitle, taskDescription, this, taskIsChecked, taskPriority, taskDueDate))
     }
 
-    removeTask(task){
-        this.tasks.splice(task.id,1)
-        trashSection.addTrashedTask(task)
+    removeTask(index){
+        this.tasks.splice(index,1)
+        trashSection.addTrashedTask(this.tasks[index])
         viewAll.projects=filterEmptyProjects(viewAll.projects)
     }
 
