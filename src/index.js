@@ -5,6 +5,7 @@ import { sideBar } from './modules/DOM/generate-content/generate-sideBar.js';
 import { projectGenerator } from './modules/Logic/project-Generator.js';
 import { viewAll } from './modules/Logic/view-all-projects.js';
 import { content } from './modules/DOM/generate-content/generate-content-section.js';
+import '../src/modules/Styles/main.css'
 
 document.body.appendChild(header)
 document.body.appendChild(sideBar)
