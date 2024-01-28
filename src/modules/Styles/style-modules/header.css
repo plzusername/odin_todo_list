@@ -19,7 +19,7 @@
     gap:var(--logo-gap);
 }
 
-i{
+.header-section i{
     font-size: var(--icon-size);
 }
 
