@@ -1,3 +1,15 @@
 :root{
+
+    /*Variables for header section*/
     
+    --header-background-color:rgb(10, 246, 179);
+    --header-padding:15px;
+    --icon-size:30px;
+    --header-size:35px;
+    --logo-gap:8px;
+    --signUp-top-padding:8px;
+    --signUp-right-padding:15px;
+    --button-font-size:16px;
+    --header-border-bottom-size:3px;
+
 }
