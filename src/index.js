@@ -4,9 +4,11 @@ import { footer } from './modules/DOM/generate-content/generate-footer.js'
 import { sideBar } from './modules/DOM/generate-content/generate-sideBar.js';
 import { projectGenerator } from './modules/Logic/project-Generator.js';
 import { viewAll } from './modules/Logic/view-all-projects.js';
+import { content } from './modules/DOM/generate-content/generate-content-section.js';
 
 document.body.appendChild(header)
 document.body.appendChild(sideBar)
+document.body.appendChild(content)
 document.body.appendChild(footer)
 
 let a=new projectGenerator()
