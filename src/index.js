@@ -17,6 +17,4 @@ a.addTask('title', 'description', true, 'LOW',  `${new Date(2023,9,10)}`)
 b.addTask('title', 'description', true, 'LOW',  `${new Date(2023,9,10)}`)
 c.addTask('title', 'description', true, 'LOW',  `${new Date(2025,9,10)}`)
 
-console.log(viewAll.filterTasksBasedOnDays(-3000))
-
 console.log(viewAll.projects)
