@@ -1,6 +1,7 @@
 import {viewAll} from './view-all-projects.js'
 import { taskGenerator } from './task-generator.js'
 import { trashSection } from './trash-section.js'
+import { filterEmptyProjects } from './remove-empty-project.js'
 
 class projectGenerator{
     constructor(title = `Project #${viewAll.projects.length + 1}`){
@@ -22,6 +23,7 @@ class projectGenerator{
     removeTask(task){
         this.tasks.splice(task.id,1)
         trashSection.addTrashedTask(task)
+        viewAll.projects=filterEmptyProjects(viewAll.projects)
     }
 
 }
