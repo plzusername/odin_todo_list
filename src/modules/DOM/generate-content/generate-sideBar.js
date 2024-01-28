@@ -3,7 +3,7 @@ import { generateFilter } from '../DOM-functions/generate-filter.js'
 
 function createSideBarSection(){
 
-    const home_section_filters=[generateFilter('View All', 'view-all-filter'),generateFilter('Trash', 'trash-filter'),generateFilter('Time filter', 'time-filter'),generateFilter('Calendar', 'calendar-filter')]
+    const home_section_filters=[generateFilter('View All', 'view-all-filter'),generateFilter('Trash', 'trash-filter'),generateFilter('Time filter', 'time-filter'),generateFilter('Calendar', 'calendar-filter'),generateFilter('Notes', 'notes-section')]
 
     const project_input=createElement({class:'add-project-input'}, 'input', '', [])
 
