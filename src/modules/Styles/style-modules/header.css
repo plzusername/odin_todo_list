@@ -1,1 +1,37 @@
 @import url('../root-variables.css');
+
+.header-section{
+    background-color:var(--header-background-color) ;
+    display: flex;
+    justify-content: space-between;
+    padding: var(--header-padding);
+    border-bottom: var(--header-border-bottom-size) solid black;
+}
+
+.header-section h1{
+    font-size: var(--header-size);
+    font-weight:bold;
+}
+
+.logo-section{
+    display: flex;
+    align-items: center;
+    gap:var(--logo-gap);
+}
+
+i{
+    font-size: var(--icon-size);
+}
+
+button{
+    color: white;
+    background-color: black;
+    border: none;
+    align-self: center;
+    padding:var(--signUp-top-padding) var(--signUp-right-padding) ;
+    font-size: var(--button-font-size);
+}
+
+button:hover{
+    cursor: pointer;
+}
