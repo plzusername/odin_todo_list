@@ -10,6 +10,22 @@
     --signUp-top-padding:8px;
     --signUp-right-padding:15px;
     --button-font-size:16px;
-    --header-border-bottom-size:3px;
+    --section-border:3px;
+
+    /*Variables for sidebar section*/
+
+    --sidebar-background-color:rgb(223, 223, 223);
+    --sidebar-padding:12px;
+    --sideBar-header-padding:15px;
+    --sideBar-header-size:25px;
+    --filter-margin:17px;
+    --sideBar-icon-size:17px;
+    --sideBar-icon-margin-right:12px;
+    --filter-name-size:17px;
+    --filter-hover-background-color:rgb(15, 245, 234);
+    --sideBar-input-border-bottom-size:2px;
+    --project-label-font-size:11px;
+    --project-add-setion-top-margin:25px;
+    --label-bottom-margin:10px;
 
 }
