@@ -39,4 +39,9 @@
     --hover-affect-width:230%;
     --hover-affect-distance-from-link:-250%;
 
+    /*Variables for projects*/
+    --project-container-width:55%;
+    --project-container-padding:18px;
+    --project-container-margin:15px;
+
 }
