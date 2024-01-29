@@ -66,6 +66,8 @@
 }
 .add-project-input-section input{
     flex: 1;
+    padding: var(--input-padding);
+    font-size: 18px;
 }
 
 .add-project-input-section label{
