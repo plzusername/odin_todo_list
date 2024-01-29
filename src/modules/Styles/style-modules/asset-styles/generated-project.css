@@ -1,0 +1,16 @@
+@import url('../root-variables.css');
+
+.project-container{
+    background-color: white;
+    width: var(--project-container-width);
+    padding:var(--project-container-padding);
+    margin: var(--project-container-margin);
+}
+
+.project-container input{
+    background-color: white;
+}
+
+.project-container i{
+    align-self: center;
+}
