@@ -9,3 +9,8 @@
     margin: 0;
     font-family:"Montserrat", sans-serif;
 }
+
+body{
+    display: grid;
+    grid-template: 1fr 9fr 1fr/repeat(6,1fr);
+}
