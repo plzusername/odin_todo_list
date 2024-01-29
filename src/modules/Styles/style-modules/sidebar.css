@@ -40,7 +40,7 @@
 }
 
 
-.sideBar-section input{
+.add-project-section input{
     outline: none;
     appearance: none;
     border: none;
@@ -55,7 +55,7 @@
     margin-top: var(--project-add-setion-top-margin);
 }
 
-.sideBar-section .add-project-section i{
+.add-project-section i{
     align-self: center;
 }
 
