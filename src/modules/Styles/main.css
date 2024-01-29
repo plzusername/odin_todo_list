@@ -2,6 +2,7 @@
 @import url('./style-modules/generated-styles/content.css');
 @import url('./style-modules/generated-styles/footer.css');
 @import url('./style-modules/generated-styles/sidebar.css');
+@import url('./style-modules/asset-styles/generated-project.css');
 
 *{
     box-sizing: border-box;
