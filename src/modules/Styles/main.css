@@ -1,7 +1,7 @@
-@import url('./style-modules/header.css');
-@import url('./style-modules/content.css');
-@import url('./style-modules/sidebar.css');
-@import url('./style-modules/footer.css');
+@import url('./style-modules/generated-styles/header.css');
+@import url('./style-modules/generated-styles/content.css');
+@import url('./style-modules/generated-styles/footer.css');
+@import url('./style-modules/generated-styles/sidebar.css');
 
 *{
     box-sizing: border-box;
