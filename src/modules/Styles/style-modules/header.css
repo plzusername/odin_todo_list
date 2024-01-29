@@ -5,7 +5,7 @@
     display: flex;
     justify-content: space-between;
     padding: var(--header-padding);
-    border-bottom: var(--header-border-bottom-size) solid black;
+    border-bottom: var(--section-border) solid black;
 }
 
 .header-section h1{
