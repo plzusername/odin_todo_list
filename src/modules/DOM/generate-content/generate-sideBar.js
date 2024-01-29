@@ -8,8 +8,8 @@ function createSideBarSection(){
 
     const home_section_filters=[generateFilter('View All', 'view-all-filter'),generateFilter('Trash', 'trash-filter'),generateFilter('Time filter', 'time-filter'),generateFilter('Calendar', 'calendar-filter'),generateFilter('Notes', 'notes-section')]
 
-    const project_add_label=createElement({class:'add-project-label', id:'project_input'}, 'input', '', [])
-    const project_add_input=createElement({class:'add-project-input', for:'project_input'}, 'label', 'Add Project', [])
+    const project_add_label=createElement({class:'add-project-label', for:'project_input'}, 'label', 'Add Project', [])
+    const project_add_input=createElement({class:'add-project-input', id:'project_input'}, 'input', '', [])
 
     const project_input=createElement({class:'add-project-input-section'}, 'div', '', [project_add_label,project_add_input])
     const add_icon=createElement({class:'project-add-icon fa-solid fa-plus'}, 'i', '',[])
