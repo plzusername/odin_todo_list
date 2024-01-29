@@ -4,7 +4,7 @@ function createFooterSection(){
     const gtihubLogo=createElement({class:'github-logo fa-brands fa-github'}, 'i', '', [])
     const githubUsername=createElement({class:'github-username'}, 'p', 'MOFRIS', [])
 
-    const linkSection=createElement({class:'link-section'}, 'a', '', [gtihubLogo, githubUsername])
+    const linkSection=createElement({class:'link-section', href:'https://github.com/plzusername'}, 'a', '', [gtihubLogo, githubUsername])
 
     const footer_section=createElement({class:'footer-section'}, 'div', '', [linkSection])
 
