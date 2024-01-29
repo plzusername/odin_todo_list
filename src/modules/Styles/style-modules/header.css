@@ -6,6 +6,7 @@
     justify-content: space-between;
     padding: var(--header-padding);
     border-bottom: var(--section-border) solid black;
+    grid-area: 1/1/1/7;
 }
 
 .header-section h1{
