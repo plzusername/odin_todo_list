@@ -4,6 +4,7 @@ import { footer } from './modules/DOM/generate-content/generate-footer.js'
 import { sideBar } from './modules/DOM/generate-content/generate-sideBar.js';
 import { projectGenerator } from './modules/Logic/project-Generator.js';
 import { viewAll } from './modules/Logic/view-all-projects.js';
+import { projectDomify } from './modules/DOM/DOM-functions/generate-DOM-project.js';
 import { content } from './modules/DOM/generate-content/generate-content-section.js';
 import '../src/modules/Styles/main.css'
 
@@ -11,6 +12,7 @@ document.body.appendChild(header)
 document.body.appendChild(sideBar)
 document.body.appendChild(content)
 document.body.appendChild(footer)
+projectDomify({title:'ff'})
 
 let a=new projectGenerator()
 let b=new projectGenerator()
