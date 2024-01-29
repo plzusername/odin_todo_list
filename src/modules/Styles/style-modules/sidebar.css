@@ -1,1 +1,75 @@
 @import url('../root-variables.css');
+
+.sideBar-section{
+ background-color: var(--sidebar-background-color);   
+ padding: var(--sidebar-padding);
+ border-right: var(--section-border) solid black;
+ grid-area: 2/1/3/2;
+
+}
+
+.sideBar-section > *{
+    display: block;
+}
+
+.sideBar-section h1{
+    background-color: black;
+    padding: var(--sideBar-header-padding);
+    color: white;
+    font-weight: bold;
+    font-size: var(--sideBar-header-size);
+}
+
+.filter-container{
+    padding: calc(var(--filter-margin)) calc(var(--filter-margin)/2);
+}
+
+.filter-container > i{
+    font-size: var(--sideBar-icon-size);
+    margin-right: var(--sideBar-icon-margin-right);
+}
+
+.filter-container > span{
+    font-weight: bold;
+    font-size: var(--filter-name-size);
+}
+
+.filter-container:hover{
+    cursor: pointer;
+    background-color: var(--header-background-color);
+}
+
+
+.sideBar-section input{
+    outline: none;
+    appearance: none;
+    border: none;
+    background-color: var(--sidebar-background-color);
+    border-bottom: var(--sideBar-input-border-bottom-size) black solid;
+    display: block;
+}
+
+.add-project-section{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: var(--project-add-setion-top-margin);
+}
+
+.sideBar-section .add-project-section i{
+    align-self: center;
+}
+
+.add-project-input-section{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+.add-project-input-section input{
+    flex: 1;
+}
+
+.add-project-input-section label{
+    font-weight:100;
+    font-size: var(--project-label-font-size);
+    margin-bottom: var(--label-bottom-margin);
+}
