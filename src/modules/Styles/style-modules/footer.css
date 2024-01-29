@@ -12,6 +12,8 @@
     display: flex;
     gap: var(--footer-gap);
     align-items: center;
+    text-decoration: none;
+    color: black;
     position: relative;
 }
 
