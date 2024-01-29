@@ -2,4 +2,60 @@
 
 .footer-section{
     grid-area: 3/1/3/7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: var(--section-border) solid black;
+}
+
+.link-section{
+    display: flex;
+    gap: var(--footer-gap);
+    align-items: center;
+    position: relative;
+}
+
+.link-section p{
+    font-size: var(--github-username-size);
+    font-weight: bold;
+    transition: var(--footer-transition);
+}
+
+.link-section i{
+    font-size: var(--github-icon-size);
+}
+
+.link-section:hover > p{
+    letter-spacing: var(--hover-letter-spacing);
+    cursor: pointer;
+}
+
+.link-section::before, .link-section::after{
+    background-color: black;
+    content: '';
+    height:1px;
+    width: 0;
+    transition: var(--footer-transition);
+    position: absolute;
+
+}
+
+.link-section::before{
+    left: var(--hover-affect-distance-from-link);
+
+}
+
+.link-section::after{
+    right: var(--hover-affect-distance-from-link);
+
+}
+
+.link-section:hover::before{
+    width: var(--hover-affect-width);
+
+}
+
+.link-section:hover::after{
+    width: var(--hover-affect-width);
+
 }
