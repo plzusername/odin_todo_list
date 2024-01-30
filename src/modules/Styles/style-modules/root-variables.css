@@ -44,4 +44,13 @@
     --project-container-padding:18px;
     --project-container-margin:15px;
 
+    /*Variables for forms*/
+
+    --form-border-radius:16px;
+    --form-width:300px;
+    --form-height:350px;
+    --form-input-padding:4px;
+    --form-gap:16px;
+    --form-input-font-size:20px;
+
 }
