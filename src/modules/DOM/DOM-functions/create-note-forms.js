@@ -1,20 +1,42 @@
 import { createElement } from "../utility/createElement";
 
-function createNoteForm(mode){
-    const formHeader=createElement({class:'note-form-header'}, 'h1', `${mode} task`, [])
+class NoteForm{
 
-    const titleInput=createElement({class:'title-input-note'}, 'input', '', [])
-    const titleInputSection=createElement({class:'title-input-section-note'}, 'label', 'Title:', [titleInput])
+    createForm(){
+        const formHeader=createElement({class:'note-form-header'}, 'h1', `task`, [])
 
-    const descriptionInput=createElement({class:'description-input-note'}, 'input', '', [])
-    const descriptionInputSection=createElement({class:'description-input-section-note'}, 'label', 'Description:', [descriptionInput])
+        const titleInput=createElement({class:'title-input-note'}, 'input', '', [])
+        const titleInputSection=createElement({class:'title-input-section-note'}, 'label', 'Title:', [titleInput])
+    
+        const descriptionInput=createElement({class:'description-input-note'}, 'input', '', [])
+        const descriptionInputSection=createElement({class:'description-input-section-note'}, 'label', 'Description:', [descriptionInput])
+    
+        const submitButton=createElement({class:'note-submit-button'} ,'button', `note`)
+    
+    
+        const noteForm=createElement({class:`note-form`}, 'div', '', [formHeader,titleInputSection,descriptionInputSection,submitButton])
+    
+        return noteForm    
+    }
 
-    const submitButton=createElement({class:'task-submit-button'} ,'button', `${mode} note`)
+    editorizeForm(){
+        const formHeader=document.querySelector('.note-form-header')
+        const submitButton=document.querySelector('.note-submit-button')
 
+        formHeader.textContent = 'Edit form'
 
-    const taskForm=createElement({class:`note-form`}, 'div', '', [formHeader,titleInputSection,descriptionInputSection,submitButton])
+        submitButton.addEventListener('click' , /*Edit bote with DOM logic and storage*/)
+    }
 
-    return noteForm
+    creatizeForm(){
+        const formHeader=document.querySelector('.note-form-header')
+        const submitButton=document.querySelector('.note-submit-button')
+
+        formHeader.textContent = 'Create form'
+
+        submitButton.addEventListener('click' , /*Create bote with DOM logic and storage*/)
+
+    }
 }
 
-export {createNoteForm}
+export {NoteForm}
