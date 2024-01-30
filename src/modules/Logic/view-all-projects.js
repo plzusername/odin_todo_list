@@ -1,6 +1,8 @@
 const { isBefore, isAfter, add  } = require("date-fns");
 const { cloneDeep } = require('lodash')
 import { filterEmptyProjects } from "./remove-empty-project";
+import { projectDomify } from "../DOM/DOM-functions/generate-DOM-project";
+import { content } from '../DOM/generate-content/generate-content-section'
 class viewAll{
     static projects = []
 
@@ -23,6 +25,8 @@ class viewAll{
 
     static addProject(project){
         viewAll.projects.push(project)
+        content.appendChild(projectDomify(project))
+
     }
 }
 
