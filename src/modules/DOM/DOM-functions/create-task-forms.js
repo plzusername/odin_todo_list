@@ -2,7 +2,7 @@ import { createElement } from "../utility/createElement";
 
 class TaskForm{
 
-    createForm(){
+    static createForm(){
         const formHeader=createElement({class:'task-form-header'}, 'h1', `task`, [])
 
         const titleInput=createElement({class:'title-input-task'}, 'input', '', [])
@@ -26,7 +26,7 @@ class TaskForm{
     
     }
 
-    editorizeForm(){
+    static editorizeForm(){
         const formHeader=document.querySelector('.task-form-header')
         const submitButton=document.querySelector('.task-submit-button')
 
@@ -35,7 +35,7 @@ class TaskForm{
         submitButton.addEventListener('click' , /*Edit task with DOM logic and storage*/)
     }
 
-    creatizeForm(){
+    static creatizeForm(){
         const formHeader=document.querySelector('.task-form-header')
         const submitButton=document.querySelector('.task-submit-button')
 

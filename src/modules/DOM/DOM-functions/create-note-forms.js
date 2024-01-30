@@ -2,7 +2,7 @@ import { createElement } from "../utility/createElement";
 
 class NoteForm{
 
-    createForm(){
+    static createForm(){
         const formHeader=createElement({class:'note-form-header'}, 'h1', `task`, [])
 
         const titleInput=createElement({class:'title-input-note'}, 'input', '', [])
@@ -19,7 +19,7 @@ class NoteForm{
         return noteForm    
     }
 
-    editorizeForm(){
+    static editorizeForm(){
         const formHeader=document.querySelector('.note-form-header')
         const submitButton=document.querySelector('.note-submit-button')
 
@@ -28,7 +28,7 @@ class NoteForm{
         submitButton.addEventListener('click' , /*Edit bote with DOM logic and storage*/)
     }
 
-    creatizeForm(){
+    static creatizeForm(){
         const formHeader=document.querySelector('.note-form-header')
         const submitButton=document.querySelector('.note-submit-button')
 
