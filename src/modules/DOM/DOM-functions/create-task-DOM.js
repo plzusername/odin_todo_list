@@ -11,6 +11,8 @@ function createTask(task){
 
     const taskContainer=createElement({class:'task-container'}, 'div', '', [check,taskTitle,taskDescription,taskDateInput,taskDelete,taskEdit])
 
+    return taskContainer
+
 }
 
 export {createTask}
