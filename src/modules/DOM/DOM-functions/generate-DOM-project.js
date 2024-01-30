@@ -1,6 +1,6 @@
 import { createElement } from "../utility/createElement";
 import { createInputAdder } from "./create-input-adder";
-import appendChildren from "../utility/add-Children-To-Element.js";
+import { viewAll } from '../../Logic/view-all-projects'
 
 function projectDomify(project){
     const content=document.querySelector('.content-section')
@@ -12,6 +12,8 @@ function projectDomify(project){
     const projectContainer=createElement({class:'project-container'}, 'div', '', [projectName,taskAdder])
 
     content.appendChild(projectContainer)
+
+    viewAll.addProject(project)
 
 }
 

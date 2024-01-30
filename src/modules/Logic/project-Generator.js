@@ -8,7 +8,6 @@ class projectGenerator{
         this.title=title
         this.tasks=[]
         this.id=viewAll.projects.length 
-        viewAll.projects.push(this)
 
     }
     

@@ -20,6 +20,10 @@ class viewAll{
 
         return filterEmptyProjects(toBeFilteredArray)
     }
+
+    static addProject(project){
+        viewAll.projects.push(project)
+    }
 }
 
 
