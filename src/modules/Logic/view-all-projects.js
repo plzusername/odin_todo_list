@@ -24,8 +24,9 @@ class viewAll{
     }
 
     static addProject(project){
-        viewAll.projects.push(project)
-        content.appendChild(projectDomify(project))
+        const projectDomified = projectDomify(project)
+        viewAll.projects.push(projectDomified)
+        content.appendChild(projectDomified)
 
     }
 }
