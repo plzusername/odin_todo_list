@@ -17,9 +17,7 @@ class projectGenerator{
     }
 
     addTask(taskTitle, taskDescription, taskIsChecked, taskPriority, taskDueDate){
-        const project=viewAll.projects[this.id]
         this.tasks.push(new taskGenerator(taskTitle, taskDescription, this, taskIsChecked, taskPriority, taskDueDate))
-        project.appendChild(createTask(new taskGenerator(taskTitle, taskDescription, this, taskIsChecked, taskPriority, taskDueDate)))
         
     }
 
