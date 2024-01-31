@@ -53,4 +53,13 @@
     --form-gap:16px;
     --form-input-font-size:20px;
 
+    /*Variables for tasks*/
+
+    --task-container-height:65px;
+    --text-container-margin:12px;
+    --right-side-gap:12px;
+    --right-side-icon-size:16px;
+    --task-container-gap:32px;
+    --description-top-margin:20px;
+
 }
