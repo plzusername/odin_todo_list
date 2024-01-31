@@ -16,10 +16,10 @@ let a=new projectGenerator()
 let b=new projectGenerator()
 let c=new projectGenerator()
 
-a.addTask('title', 'description', true, 'LOW',  `${new Date(2023,9,10)}`)
-b.addTask('title', 'description', true, 'LOW',  `${new Date(2023,9,10)}`)
-c.addTask('title', 'description', true, 'LOW',  `${new Date(2025,9,10)}`)
+viewAll.addProject(a)
+
+a.addTask('3333333', '333333', true, 'LOW',  `${new Date(2023,9,10)}`)
+// b.addTask('title', 'description', true, 'LOW',  `${new Date(2023,9,10)}`)
+// c.addTask('title', 'description', true, 'LOW',  `${new Date(2025,9,10)}`)
 
 console.log(viewAll.projects)
-
-viewAll.addProject(a)
