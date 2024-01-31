@@ -4,6 +4,7 @@
 @import url('./style-modules/generated-styles/sidebar.css');
 @import url('./style-modules/asset-styles/generated-project.css');
 @import url('./style-modules/asset-styles/forms-styles.css');
+@import url('./style-modules/asset-styles/generated-task.css');
 
 *{
     box-sizing: border-box;
