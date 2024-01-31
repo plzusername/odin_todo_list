@@ -8,6 +8,8 @@ function projectDomify(project){
     const taskAdder=createInputAdder('Add task')
 
     const projectContainer=createElement({class:'project-container'}, 'div', '', [projectName,taskAdder])
+    
+    projectContainer.dataset.id=project.id
 
     return projectContainer
 
