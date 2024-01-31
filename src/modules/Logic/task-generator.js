@@ -1,7 +1,9 @@
 class taskGenerator{
     constructor(title, description, parent_project, checked, priority, due_date){
-        this.title=title
-        this.description=description
+        const TITLE_DESCRIPTION_LENGTH=100
+
+        this.title=title.slice(0,TITLE_DESCRIPTION_LENGTH)
+        this.description=description.slice(0,TITLE_DESCRIPTION_LENGTH)
         this.parent_project=parent_project
         this.checked=checked
         this.priority=priority
