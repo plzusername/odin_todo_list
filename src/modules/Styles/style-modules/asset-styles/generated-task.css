@@ -1,0 +1,43 @@
+@import url('../root-variables.css');
+
+.task-container{
+    display: flex;
+    height: var(--task-container-height);
+    gap:var(--task-container-gap);
+}
+
+.task-left-side{
+    flex: 1;
+    display: flex;
+}
+.task-right-side{
+    display: flex;
+    align-items: center;
+    gap:var(--right-side-gap);
+}
+
+.task-text-container{
+    flex: 1;
+    opacity: 0.7;
+    align-self: center;
+    margin-left: var(--text-container-margin);
+    margin-top: 32px;
+}
+
+.task-text-container  p{
+    word-wrap: break-word;
+}
+
+input[type='date']{
+    border: none;
+    outline: none;
+    opacity: 0.7;
+}
+
+.task-right-side i{
+    font-size: var(--right-side-icon-size);
+}
+
+.task-text-container > .task-description{
+    margin-top: 15px;
+}
