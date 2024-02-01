@@ -11,7 +11,7 @@ function createInputAdder(labelTextContent){
     const inputAdderSection=createElement({class:'add-project-section'}, 'div', '', [project_input,add_icon])
 
 
-    return inputAdderSection
+    return {inputAdderSection, add_icon}
 }
 
 export {createInputAdder}
