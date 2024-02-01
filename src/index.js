@@ -6,20 +6,13 @@ import { projectGenerator } from './modules/Logic/project-Generator.js';
 import { viewAll } from './modules/Logic/view-all-projects.js';
 import { content } from './modules/DOM/generate-content/generate-content-section.js';
 import '../src/modules/Styles/main.css'
+import { mainStorage } from './modules/Storage/main-Storage.js';
 
 document.body.appendChild(header)
 document.body.appendChild(sideBar)
 document.body.appendChild(content)
 document.body.appendChild(footer)
 
-let a=new projectGenerator()
-let b=new projectGenerator()
-let c=new projectGenerator()
 
-viewAll.addProject(a)
 
-a.addTask('3333333', '333333', true, 'LOW',  `${new Date(2023,9,10)}`)
-// b.addTask('title', 'description', true, 'LOW',  `${new Date(2023,9,10)}`)
-// c.addTask('title', 'description', true, 'LOW',  `${new Date(2025,9,10)}`)
-
-console.log(viewAll.projects)
+mainStorage()
