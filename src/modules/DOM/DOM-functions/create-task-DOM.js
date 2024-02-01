@@ -18,6 +18,8 @@ function createTask(task){
 
     const taskContainer=createElement({class:'task-container'}, 'div', '', [leftSide,rightSide])
 
+    taskContainer.dataset.task.id = task.id
+
     return taskContainer
 
 }

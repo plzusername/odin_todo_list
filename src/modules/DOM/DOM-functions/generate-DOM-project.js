@@ -9,7 +9,7 @@ function projectDomify(project){
 
     const projectContainer=createElement({class:'project-container'}, 'div', '', [projectName,taskAdder])
     
-    projectContainer.dataset.id=project.id
+    projectContainer.dataset.project.id=project.id
 
     return projectContainer
 
