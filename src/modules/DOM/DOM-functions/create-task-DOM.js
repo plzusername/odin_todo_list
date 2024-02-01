@@ -19,6 +19,9 @@ function createTask(task){
     const taskContainer=createElement({class:'task-container'}, 'div', '', [leftSide,rightSide])
 
     taskContainer.dataset.task.id = task.id
+    taskDateInput.dataset.date.id = task.id
+    taskEdit.dataset.edit.id = task.id
+    taskDelete.dataset.delete.id = task.id
 
     return taskContainer
 
