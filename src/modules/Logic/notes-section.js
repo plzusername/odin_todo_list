@@ -4,7 +4,7 @@ import { notesGenerator } from "./notes-generator"
 class notesSection{
     static notes=[]
 
-    static addNote(title, description){
+    static addItem(title, description){
         notesSection.notes.push(new notesGenerator(title, description))
     }
 

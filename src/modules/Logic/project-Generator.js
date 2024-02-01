@@ -2,7 +2,6 @@ import {viewAll} from './view-all-projects.js'
 import { taskGenerator } from './task-generator.js'
 import { trashSection } from './trash-section.js'
 import { filterEmptyProjects } from './remove-empty-project.js'
-import { createTask } from '../DOM/DOM-functions/create-task-DOM.js'
 
 class projectGenerator{
     constructor(title = `Project #${viewAll.projects.length + 1}`){
