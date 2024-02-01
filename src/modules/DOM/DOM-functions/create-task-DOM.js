@@ -7,7 +7,7 @@ function createTask(task){
     const check=createElement({class:'task-check', type:'checkbox'}, 'input', '', [])
     const taskTitle=createElement({class:'task-title'}, 'p', '', [titleText])
     const taskDescription=createElement({class:'task-description'}, 'p',  '', [descriptionText])
-    const taskDateInput=createElement({class:'task-date-input', type:'date'}, 'input',  '', [])
+    const taskDateInput=createElement({class:'task-date-input', type:'date', value:null}, 'input',  '', [])
     const taskDelete=createElement({class:'task-delete-icon, fa-solid fa-trash-can'}, 'i',  '', [])
     const taskEdit=createElement({class:'task-edit-icon fa-regular fa-pen-to-square'}, 'i',  '', [])
 
@@ -18,10 +18,12 @@ function createTask(task){
 
     const taskContainer=createElement({class:'task-container'}, 'div', '', [leftSide,rightSide])
 
-    taskContainer.dataset.task.id = task.id
-    taskDateInput.dataset.date.id = task.id
-    taskEdit.dataset.edit.id = task.id
-    taskDelete.dataset.delete.id = task.id
+    console.log(taskContainer)
+
+    taskContainer.dataset.id = task.id
+    taskDateInput.dataset.id = task.id
+    taskEdit.dataset.id = task.id
+    taskDelete.dataset.id = task.id
 
     return taskContainer
 
