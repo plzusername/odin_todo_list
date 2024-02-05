@@ -8,7 +8,7 @@ function createTask(task){
     const taskTitle=createElement({class:'task-title'}, 'p', '', [titleText])
     const taskDescription=createElement({class:'task-description'}, 'p',  '', [descriptionText])
     const taskDateInput=createElement({class:'task-date-input', type:'date', value:null}, 'input',  '', [])
-    const taskDelete=createElement({class:'task-delete-icon, fa-solid fa-trash-can'}, 'i',  '', [])
+    const taskDelete=createElement({class:'task-delete-icon fa-solid fa-trash-can'}, 'i',  '', [])
     const taskEdit=createElement({class:'task-edit-icon fa-regular fa-pen-to-square'}, 'i',  '', [])
 
     const taskText=createElement({class:'task-text-container'}, 'div', '', [taskTitle, taskDescription])
@@ -17,8 +17,6 @@ function createTask(task){
     const rightSide=createElement({class:'task-right-side'}, 'div', '', [taskDateInput, taskDelete, taskEdit])
 
     const taskContainer=createElement({class:'task-container'}, 'div', '', [leftSide,rightSide])
-
-    console.log(taskContainer)
 
     taskContainer.dataset.id = task.id
     taskDateInput.dataset.id = task.id
