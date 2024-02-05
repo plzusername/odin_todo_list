@@ -3,9 +3,9 @@ import { projectGenerator } from '../../Logic/project-Generator'
 import { content } from '../../DOM/generate-content/generate-content-section'
 import { projectDomify } from '../../DOM/DOM-functions/generate-DOM-project'
 
-const Storage=localStorage.getItem('Storage')
 
 function addProjet(){
+    const Storage=localStorage.getItem('Storage')
     const generatedProject = new projectGenerator()
 
     Storage.projects.push(generatedProject)
