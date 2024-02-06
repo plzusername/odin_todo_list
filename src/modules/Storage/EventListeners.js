@@ -6,8 +6,6 @@ const addProjectButton = document.querySelector('.Add-project')
 
 
 document.addEventListener('DOMContentLoaded', ()=>{
-    saveStorage()
     document.querySelector('.Add-project').addEventListener('click', addProjet)
-    body.addEventListener('click', saveStorage)
 
 })
