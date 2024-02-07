@@ -1,5 +1,5 @@
 import {addProjet} from './itemStorage/addProject'
-import {addTask} from './itemStorage/addTask'
+import {showCreateTaskForm} from './itemStorage/showForm'
 
 document.addEventListener('DOMContentLoaded', ()=>{
     const addProjectButton = document.querySelector('.Add-project')
@@ -9,10 +9,12 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
 document.body.addEventListener('click',()=>{
 
-    if (document.body.contains('.Add-task')){
-        const addTaskButton = document.querySelector('.Add-task')
+    if (document.body.contains(document.querySelector('.Add-task'))){
+        const addTaskButtons = document.querySelectorAll('.Add-task')
 
-        addTaskButton.addEventListener('click', addTask)
+        addTaskButtons.forEach(addTaskButton => {
+            addTaskButton.addEventListener('click',showCreateTaskForm)
+        })
     
     }
   
