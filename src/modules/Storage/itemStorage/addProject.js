@@ -8,11 +8,12 @@ let generatedProject
 function addProjectToStorage(){
     if (typeof Storage == 'string'){
         let parsedStorage = JSON.parse(Storage)
-        
+        parsedStorage.projects.push(generatedProject)
+        return parsedStorage
     }
     Storage.projects.push(generatedProject)
-
     return Storage
+
 }
 
 function addProjet(){
