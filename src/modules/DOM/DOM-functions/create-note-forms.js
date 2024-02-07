@@ -16,7 +16,7 @@ function createGenerateNoteForm(){
 
     formHeader.textContent = 'Create note'
 
-    submitButton.addEventListener('click' , /*Create task with DOM logic and storage*/)
+    submitButton.addEventListener('click' ,()=>{})
 
     return noteForm    
 }
@@ -37,7 +37,7 @@ function createEditNoteForm(){
 
     formHeader.textContent = 'Edit note'
 
-    submitButton.addEventListener('click' , /*Create task with DOM logic and storage*/)
+    submitButton.addEventListener('click' ,()=>{})
 
     return noteForm    
 }

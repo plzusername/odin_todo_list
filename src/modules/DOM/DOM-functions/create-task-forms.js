@@ -22,7 +22,7 @@ function createGenerateTaskForm(){
     
     formHeader.textContent = 'Create form'
 
-    submitButton.addEventListener('click' , /*Create task with DOM logic and storage*/)
+    submitButton.addEventListener('click' , ()=>{})
 
     return taskForm
 
@@ -50,7 +50,7 @@ function createEditTaskForm(){
 
     formHeader.textContent = 'Edit form'
 
-    submitButton.addEventListener('click' , /*Create task with DOM logic and storage*/)
+    submitButton.addEventListener('click' , ()=>{})
 
     return taskForm
 
