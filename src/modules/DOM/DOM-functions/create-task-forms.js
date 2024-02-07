@@ -1,4 +1,24 @@
 import { createElement } from "../utility/createElement"
+import { viewAll } from '../../Logic/view-all-projects'
+import { taskGenerator } from '../../Logic/task-generator'
+import { content, taskForm } from '../../DOM/generate-content/generate-content-section'
+import { createTask } from '../../DOM/DOM-functions/create-task-DOM'
+import { Storage, saveStorage } from '../../Storage/storage-utils/save-storage'
+
+let generatedTask
+
+const CircularJSON = require('circular-json')
+
+function addTaskToProjectStorage(){
+    if (typeof Storage == 'string'){
+        let parsedStorage = CircularJSON.parse(Storage)
+        parsedStorage.projects[window.currentTaskForm].tasks.push(generatedTask)
+        return parsedStorage
+    }
+    Storage.projects[window.currentTaskForm].tasks.push(generatedTask)
+    return Storage
+}
+
 
 function createGenerateTaskForm(){
     const formHeader=createElement({class:'task-form-header'}, 'h1', `task`, [])
@@ -22,7 +42,22 @@ function createGenerateTaskForm(){
     
     formHeader.textContent = 'Create form'
 
-    submitButton.addEventListener('click' , ()=>{})
+    submitButton.addEventListener('click' , ()=>{
+        const parentProject = document.querySelector(`.project-container[data-id="${window.currentTaskForm}"]`)
+
+        generatedTask = new taskGenerator(titleInput.value , descriptionInput.value , viewAll.projects[window.currentTaskForm], false ,  priorityInput.value , dueDateInput.value, )
+
+        viewAll.addProject(generatedTask)
+
+        saveStorage(addTaskToProjectStorage)
+
+        parentProject.appendChild(createTask(generatedTask))
+
+        taskForm.classList.remove('visible')
+
+
+
+    })
 
     return taskForm
 
