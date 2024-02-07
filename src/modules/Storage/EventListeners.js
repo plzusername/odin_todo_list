@@ -1,11 +1,15 @@
 import {addProjet} from './itemStorage/addProject'
-import {saveStorage} from './storage-utils/save-storage'
-
-const body = document.body
-const addProjectButton = document.querySelector('.Add-project')
-
+import {addTask} from './itemStorage/addTask'
 
 document.addEventListener('DOMContentLoaded', ()=>{
-    document.querySelector('.Add-project').addEventListener('click', addProjet)
+    const addProjectButton = document.querySelector('.Add-project')
 
+    addProjectButton.addEventListener('click', addProjet)
+})
+
+document.body.addEventListener('click',()=>{
+    const addTaskButton = document.querySelector('.Add-task')
+
+    addTaskButton.addEventListener('click', addProjet)
+  
 })
