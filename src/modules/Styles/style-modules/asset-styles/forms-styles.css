@@ -1,6 +1,6 @@
 @import url('../root-variables.css');
 
-.note-form, .task-form{
+.edit-note-form, .edit-task-form, .create-note-form, .create-task-form{
   border: var(--section-border) black solid;  
   background-color: white;
   border-radius: var(--form-border-radius);
@@ -19,8 +19,8 @@
   z-index: -1;
 }
 
-.note-form input, .task-form input{
-    display: block;
+.edit-note-form input, .edit-task-form input, .create-note-form input, .create-task-form input{
+  display: block;
     background-color: white;
     border: none;
     border-bottom: var(--section-border) black solid;
