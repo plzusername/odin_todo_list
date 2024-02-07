@@ -18,7 +18,7 @@ function createGenerateTaskForm(){
     const submitButton=createElement({class:'task-submit-button'} ,'button', `task`)
 
 
-    const taskForm=createElement({class:`task-form`}, 'div', '', [formHeader,titleInputSection,descriptionInputSection,priorityInputSection,dueDateInputSection,submitButton])
+    const taskForm=createElement({class:`create-task-form`}, 'div', '', [formHeader,titleInputSection,descriptionInputSection,priorityInputSection,dueDateInputSection,submitButton])
     
     formHeader.textContent = 'Create form'
 
@@ -46,7 +46,7 @@ function createEditTaskForm(){
     const submitButton=createElement({class:'task-submit-button'} ,'button', `task`)
 
 
-    const taskForm=createElement({class:`task-form`}, 'div', '', [formHeader,titleInputSection,descriptionInputSection,priorityInputSection,dueDateInputSection,submitButton])
+    const taskForm=createElement({class:`edit-task-form`}, 'div', '', [formHeader,titleInputSection,descriptionInputSection,priorityInputSection,dueDateInputSection,submitButton])
 
     formHeader.textContent = 'Edit form'
 

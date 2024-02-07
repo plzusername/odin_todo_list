@@ -12,7 +12,7 @@ function createGenerateNoteForm(){
     const submitButton=createElement({class:'note-submit-button'} ,'button', `note`)
 
 
-    const noteForm=createElement({class:`note-form`}, 'div', '', [formHeader,titleInputSection,descriptionInputSection,submitButton])
+    const noteForm=createElement({class:`create-note-form`}, 'div', '', [formHeader,titleInputSection,descriptionInputSection,submitButton])
 
     formHeader.textContent = 'Create note'
 
@@ -33,7 +33,7 @@ function createEditNoteForm(){
     const submitButton=createElement({class:'note-submit-button'} ,'button', `note`)
 
 
-    const noteForm=createElement({class:`note-form`}, 'div', '', [formHeader,titleInputSection,descriptionInputSection,submitButton])
+    const noteForm=createElement({class:`edit-note-form`}, 'div', '', [formHeader,titleInputSection,descriptionInputSection,submitButton])
 
     formHeader.textContent = 'Edit note'
 
