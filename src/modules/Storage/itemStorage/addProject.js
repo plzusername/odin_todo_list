@@ -12,10 +12,10 @@ const CircularJSON = require('circular-json')
 function addProjectToStorage(){
     if (typeof Storage == 'string'){
         let parsedStorage = CircularJSON.parse(Storage)
-        parsedStorage.projects = CircularJSON.parse(localStorage.getItem('ViewAllHelper'))
+        parsedStorage.projects.push(generatedProject)
         return parsedStorage
     }
-    Storage.projects = CircularJSON.parse(localStorage.getItem('ViewAllHelper'))
+    Storage.projects.push(generatedProject)
     return Storage
 }
 
@@ -23,10 +23,6 @@ function addProjet(){
     generatedProject = new projectGenerator()
 
     viewAll.addProject(generatedProject)
-
-    let viewAllStorage = CircularJSON.parse(localStorage.getItem('ViewAllHelper')) || [];
-    viewAllStorage.push(generatedProject);
-    localStorage.setItem('ViewAllHelper', CircularJSON.stringify(viewAllStorage));
 
     saveStorage(addProjectToStorage)
 
