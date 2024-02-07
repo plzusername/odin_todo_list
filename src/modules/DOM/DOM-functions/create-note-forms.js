@@ -42,4 +42,4 @@ function createEditNoteForm(){
     return noteForm    
 }
 
-export {createEditTaskForm,createGenerateTaskForm}
+export {createEditNoteForm,createGenerateNoteForm}
