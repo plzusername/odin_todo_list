@@ -1,6 +1,6 @@
 import { createElement } from "../utility/createElement";
 
-function createGenerateNotekForm(){
+function createGenerateNoteForm(){
     const formHeader=createElement({class:'note-form-header'}, 'h1', `task`, [])
 
     const titleInput=createElement({class:'title-input-note'}, 'input', '', [])
