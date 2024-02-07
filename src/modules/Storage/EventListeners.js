@@ -8,8 +8,12 @@ document.addEventListener('DOMContentLoaded', ()=>{
 })
 
 document.body.addEventListener('click',()=>{
-    const addTaskButton = document.querySelector('.Add-task')
 
-    addTaskButton.addEventListener('click', addProjet)
+    if (document.body.contains('.Add-task')){
+        const addTaskButton = document.querySelector('.Add-task')
+
+        addTaskButton.addEventListener('click', addTask)
+    
+    }
   
 })
