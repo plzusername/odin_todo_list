@@ -29,3 +29,7 @@
     font-size: var(--form-input-font-size);
 }
 
+.visible{
+  z-index: 2;
+  opacity: 1;
+}
