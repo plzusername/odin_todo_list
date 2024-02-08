@@ -1,5 +1,6 @@
 import { createElement } from "../utility/createElement";
 import { viewAll } from "../../Logic/view-all-projects";
+import CircularJSON from "circular-json";
 
 function createTask(task){
     const titleText=document.createTextNode(task.title)
@@ -10,15 +11,12 @@ function createTask(task){
     check.addEventListener('click',()=>{
         const checkBox = event.target
         const parentTask = checkBox.closest('.task-container')
-        const parentTaskObject = viewAll.projects[checkBox.closest('.project-container').dataset.id][parentTask.dataset.id]
 
         if(checkBox.checked == true){
             parentTask.classList.add('checked')
-            parentTaskObject.check()
         }
         else{
             parentTask.classList.remove('checked')
-            parentTaskObject.check()
         }
     })
 
