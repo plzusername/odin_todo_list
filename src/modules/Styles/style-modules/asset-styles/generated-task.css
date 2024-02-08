@@ -41,3 +41,11 @@ input[type='date']{
 .task-text-container > .task-description{
     margin-top: 15px;
 }
+
+.checked{
+    opacity: 0.4;
+}
+
+.checked .task-title, .checked .task-description{
+    text-decoration:line-through;
+}
