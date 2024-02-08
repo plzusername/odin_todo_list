@@ -1,13 +1,31 @@
 import { createElement } from "../utility/createElement";
+import { viewAll } from "../../Logic/view-all-projects";
 
 function createTask(task){
     const titleText=document.createTextNode(task.title)
     const descriptionText=document.createTextNode(task.description)
 
     const check=createElement({class:'task-check', type:'checkbox'}, 'input', '', [])
+
+    check.addEventListener('click',()=>{
+        const checkBox = event.target
+        const parentTask = checkBox.closest('.task-container')
+        const parentTaskObject = viewAll.projects[checkBox.closest('.project-container').dataset.id][parentTask.dataset.id]
+
+        if(checkBox.checked == true){
+            parentTask.classList.add('checked')
+            parentTaskObject.check()
+        }
+        else{
+            parentTask.classList.remove('checked')
+            parentTaskObject.check()
+        }
+    })
+
     const taskTitle=createElement({class:'task-title'}, 'p', '', [titleText])
     const taskDescription=createElement({class:'task-description'}, 'p',  '', [descriptionText])
     const taskDateInput=createElement({class:'task-date-input', type:'date', value:task.due_date}, 'input',  '', [])
+    taskDateInput.disabled=true
     const taskDelete=createElement({class:'task-delete-icon fa-solid fa-trash-can'}, 'i',  '', [])
     const taskEdit=createElement({class:'task-edit-icon fa-regular fa-pen-to-square'}, 'i',  '', [])
 
