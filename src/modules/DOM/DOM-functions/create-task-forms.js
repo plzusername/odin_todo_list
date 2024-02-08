@@ -51,7 +51,9 @@ function createGenerateTaskForm(){
 
         generatedTask = new taskGenerator(titleInput.value , descriptionInput.value , viewAll.projects[window.currentTaskForm], false ,  priorityInput.value , dueDateInput.value, )
 
-        viewAll.addProject(generatedTask)
+        const parentProjectObject=viewAll.projects[window.currentTaskForm]
+
+        parentProjectObject.addTask(generatedTask)
 
         saveStorage(addTaskToProjectStorage)
 
@@ -63,17 +65,6 @@ function createGenerateTaskForm(){
     })
 
     submitButton.addEventListener('click' , ()=>{
-        // const parentProject = document.querySelector(`.project-container[data-id="${window.currentTaskForm}"]`)
-
-        // generatedTask = new taskGenerator(titleInput.value , descriptionInput.value , viewAll.projects[window.currentTaskForm], false ,  priorityInput.value , dueDateInput.value, )
-
-        // viewAll.addProject(generatedTask)
-
-        // saveStorage(addTaskToProjectStorage)
-
-        // parentProject.appendChild(createTask(generatedTask))
-
-        // taskForm.classList.remove('visible')
     })
 
 
