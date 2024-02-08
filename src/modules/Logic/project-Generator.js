@@ -15,8 +15,8 @@ class projectGenerator{
         viewAll.projects.splice(this.id,1)
     }
 
-    addTask(taskTitle, taskDescription, taskIsChecked, taskPriority, taskDueDate){
-        this.tasks.push(new taskGenerator(taskTitle, taskDescription, this, taskIsChecked, taskPriority, taskDueDate))
+    addTask(task){
+        this.tasks.push(task)
         
     }
 
