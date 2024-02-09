@@ -1,7 +1,6 @@
 import { createElement } from "../utility/createElement"
 import { viewAll } from '../../Logic/view-all-projects'
 import { taskGenerator } from '../../Logic/task-generator'
-import { content, taskForm } from '../../DOM/generate-content/generate-content-section'
 import { createTask } from '../../DOM/DOM-functions/create-task-DOM'
 import { Storage, saveStorage } from '../../Storage/storage-utils/save-storage'
 
@@ -31,8 +30,17 @@ function createGenerateTaskForm(){
     descriptionInput.required=true
     const descriptionInputSection=createElement({class:'description-input-task-section'}, 'label', 'Description:', [descriptionInput])
 
-    const priorityInput=createElement({class:'priority-input-task' }, 'input', '', [])
+    const priorityInput=createElement({class:'priority-input-task' }, 'select', '', [])
+
+    const options = ['Low', 'Medium', 'High']
+    options.forEach(option =>{
+        const optionInput = createElement({class:option}, 'option', option)
+        priorityInput.appendChild(optionInput)
+    })
+
     priorityInput.required=true
+
+
     const priorityInputSection=createElement({class:'priority-input-task-section'}, 'label', 'Priority:', [priorityInput])
 
     const dueDateInput=createElement({class:'due-date-input-task', type:'date'}, 'input', '', [])
@@ -56,6 +64,10 @@ function createGenerateTaskForm(){
         parentProjectObject.addTask(generatedTask)
 
         saveStorage(addTaskToProjectStorage)
+
+        titleInput.value = ''
+        descriptionInput.value = ''
+        dueDateInput.value = null
 
         parentProject.appendChild(createTask(generatedTask))
 
