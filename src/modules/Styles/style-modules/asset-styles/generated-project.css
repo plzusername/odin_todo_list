@@ -14,3 +14,9 @@
 .project-container i{
     align-self: center;
 }
+
+.add-task-container{
+    display: flex;
+    justify-content: space-between;
+    margin-top: var(--add-task-margin-top);
+}
