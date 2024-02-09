@@ -20,7 +20,13 @@ function addProjectToStorage(){
 }
 
 function addProjet(){
-    generatedProject = new projectGenerator()
+    const projectInput = document.querySelector('.add-project-input')
+
+    const projectTitle = projectInput.value || undefined
+
+    generatedProject = new projectGenerator(projectTitle)
+
+    projectInput.value = ''
 
     viewAll.addProject(generatedProject)
 
