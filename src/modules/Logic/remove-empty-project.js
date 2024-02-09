@@ -1,5 +1,5 @@
-function filterEmptyProjects(projectsAArray){
-    return projectsAArray.filter(project => project.tasks.length != 0)
+function filterEmptyProjects(projectsArray){
+    return projectsArray.filter(project => project.tasks.length != 0)
 }
 
 export {filterEmptyProjects}
