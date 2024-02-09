@@ -36,6 +36,7 @@ function addProjet(){
     content.appendChild(projectDomify(generatedProject))
 
     const projectFilter = generateFilter(generatedProject.title, 'project-filter')
+    projectFilter.dataset.id = generatedProject.id
     const sideBarProjects = document.querySelector('.sideBar-projects-section')
     sideBarProjects.appendChild(projectFilter)
 
