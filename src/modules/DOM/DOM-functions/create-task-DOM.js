@@ -1,25 +1,21 @@
 import { createElement } from "../utility/createElement";
-import { viewAll } from "../../Logic/view-all-projects";
-import CircularJSON from "circular-json";
 
 function createTask(task){
     const titleText=document.createTextNode(task.title)
     const descriptionText=document.createTextNode(task.description)
 
     const check=createElement({class:'task-check', type:'checkbox'}, 'input', '', [])
+    // check.addEventListener('click',()=>{
+    //     const checkBox = event.target
+    //     const parentTask = checkBox.closest('.task-container')
 
-    check.addEventListener('click',()=>{
-        const checkBox = event.target
-        const parentTask = checkBox.closest('.task-container')
-
-        if(checkBox.checked == true){
-            parentTask.classList.add('checked')
-        }
-        else{
-            parentTask.classList.remove('checked')
-        }
-    })
-
+    //     if(checkBox.checked == true){
+    //         parentTask.classList.add('checked')
+    //     }
+    //     else{
+    //         parentTask.classList.remove('checked')
+    //     }
+    // })
     const taskTitle=createElement({class:'task-title'}, 'p', '', [titleText])
     const taskDescription=createElement({class:'task-description'}, 'p',  '', [descriptionText])
     const taskDateInput=createElement({class:'task-date-input', type:'date', value:task.due_date}, 'input',  '', [])
@@ -38,6 +34,7 @@ function createTask(task){
     taskDateInput.dataset.id = task.id
     taskEdit.dataset.id = task.id
     taskDelete.dataset.id = task.id
+    taskContainer.dataset.priority = task.priority
 
     return taskContainer
 
