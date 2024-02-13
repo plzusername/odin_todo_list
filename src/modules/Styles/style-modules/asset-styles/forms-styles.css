@@ -17,6 +17,7 @@
   opacity: 0;
   transition: var(--footer-transition);
   z-index: -1;
+  position: fixed;
 }
 
 .edit-note-form input, .edit-task-form input, .create-note-form input, .create-task-form input{
