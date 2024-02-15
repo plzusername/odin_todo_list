@@ -1,6 +1,5 @@
 import {viewAll} from './view-all-projects.js'
 import { trashSection } from './trash-section.js'
-import { filterEmptyProjects } from './remove-empty-project.js'
 import { redoIds } from './redoIds.js'
 
 class projectGenerator{
@@ -17,9 +16,9 @@ class projectGenerator{
     }
 
     addTask(task){
-        this.tasks.push(task)
         task.id = this.tasks.length
         task.parent_project = {id:this.id}
+        this.tasks.push(task)
     }
 
     removeTask(task){
