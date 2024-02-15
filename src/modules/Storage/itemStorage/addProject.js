@@ -31,6 +31,8 @@ function addProjet(){
 
     viewAll.addProject(generatedProject)
 
+    console.log(Storage)
+
     saveStorage(addProjectToStorage)
 
     content.appendChild(projectDomify(generatedProject))
