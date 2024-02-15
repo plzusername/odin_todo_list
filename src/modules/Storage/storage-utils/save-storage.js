@@ -1,12 +1,12 @@
-const CircularJSON = require('circular-json')
+import CircularJSON from "circular-json"
 
-let Storage = localStorage.getItem('Storage') == null ? {
+let Storage = localStorage.getItem('Storage') == null ?  {
     projects: [],
     trash: [],
     tempDateFiltered: [],
     notes: [],
     calendar: {}
-}: localStorage.getItem('Storage')
+} : CircularJSON.parse(localStorage.getItem('Storage'))
 
 
 export {Storage}
@@ -16,9 +16,7 @@ export function saveStorage(whatToDoToStorage){
 
     Storage = whatToDoToStorage()    
 
-    localStorage.setItem('Storage', CircularJSON.stringify(Storage))
+    localStorage.setItem('Storage', JSON.stringify(Storage))
 
 
 }
-
-// saveStorage()
