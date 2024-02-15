@@ -9,13 +9,15 @@ let generatedTask
 const CircularJSON = require('circular-json')
 
 function addTaskToProjectStorage(){
-    if (typeof Storage == 'string'){
-        let parsedStorage = CircularJSON.parse(Storage)
-        parsedStorage.projects[window.currentTaskForm].tasks.push(generatedTask)
-        return parsedStorage
-    }
-    Storage.projects[window.currentTaskForm].tasks.push(generatedTask)
-    return Storage
+    // if (typeof Storage == 'string'){
+        // let parsedStorage = CircularJSON.parse(Storage)
+        // parsedStorage.projects[window.currentTaskForm].tasks.push(generatedTask)
+        // return parsedStorage
+    // }
+    // else{
+        // Storage.projects[window.currentTaskForm].tasks.push(generatedTask)
+        return Storage    
+    // }
 }
 
 
@@ -55,14 +57,16 @@ function createGenerateTaskForm(){
     formHeader.textContent = 'Create form'
 
     taskForm.addEventListener('submit',()=>{
+
         const parentProject = document.querySelector(`.project-container[data-id="${window.currentTaskForm}"]`)
 
-        generatedTask = new taskGenerator(titleInput.value , descriptionInput.value , viewAll.projects[window.currentTaskForm], false ,  priorityInput.value , dueDateInput.value, )
+        generatedTask = new taskGenerator(titleInput.value , descriptionInput.value , {}, false ,  priorityInput.value , dueDateInput.value, )
 
-        const parentProjectObject=viewAll.projects[window.currentTaskForm]
+        const parentProjectObject = viewAll.projects[window.currentTaskForm]
 
         parentProjectObject.addTask(generatedTask)
 
+        console.log(Storage)
         saveStorage(addTaskToProjectStorage)
 
         titleInput.value = ''
@@ -75,10 +79,6 @@ function createGenerateTaskForm(){
 
         event.preventDefault()
     })
-
-    submitButton.addEventListener('click' , ()=>{
-    })
-
 
     return taskForm
 
