@@ -1,15 +1,13 @@
-import { content } from '../DOM/generate-content/generate-content-section'
-
-function redoIds(items, elements){
+function redoIds(items, elements = undefined){
     items.forEach((item, index) => {
         item.id = index
     });
 
-    const elementsToLoop = document.querySelectorAll(elements)
-
-    elementsToLoop.forEach((element, index) =>{
-        element.dataset.id = index
-    })
+    if(elements){
+        elements.forEach((element, index) =>{
+            element.dataset.id = index
+        })    
+    }
 }
 
 export{ redoIds }
