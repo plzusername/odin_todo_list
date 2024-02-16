@@ -2,20 +2,9 @@ import { viewAll } from '../../Logic/view-all-projects'
 import { Storage, saveStorage } from '../storage-utils/save-storage'
 import { redoIds } from '../../Logic/redoIds'
 
-const CircularJSON = require('circular-json')
-
 let removedTask
 
 function addProjectToStorage(){
-    if (typeof Storage == 'string'){
-        // let parsedStorage = CircularJSON.parse(Storage)
-        // parsedStorage.projects[event.target.closest('.project-container').dataset.id].removeTask(removedTask)
-        // redoIds(parsedStorage.projects[event.target.closest('.project-container').dataset.id].tasks)
-        return parsedStorage
-    }
-    // console.log(Storage.projects[event.target.closest('.project-container').dataset.id])
-    // Storage.projects[event.target.closest('.project-container').dataset.id].removeTask(removedTask)
-    // redoIds(Storage.projects[event.target.closest('.project-container').dataset.id].tasks)
     return Storage
 }
 
