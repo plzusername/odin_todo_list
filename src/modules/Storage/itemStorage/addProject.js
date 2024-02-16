@@ -4,18 +4,12 @@ import { content } from '../../DOM/generate-content/generate-content-section'
 import { projectDomify } from '../../DOM/DOM-functions/generate-DOM-project'
 import { Storage, saveStorage } from '../storage-utils/save-storage'
 import { generateFilter } from '../../DOM/DOM-functions/generate-filter'
-import { renewStorage } from '../../Logic/renewStorage'
 
 let generatedProject
 
 
 function addProjectToStorage(){
     Storage.projects.push(generatedProject)
-
-    // const renewedStorage = renewStorage()
-
-    // renewedStorage.projects.push(generatedProject)
-
     return Storage
 }
 
