@@ -27,7 +27,7 @@ class viewAll{
         viewAll.projects.push(project)
 
     }
-    static remove(project){
+    static removeProject(project){
         viewAll.projects.splice(project.id,1)
         redoIds(viewAll.projects)
     }
