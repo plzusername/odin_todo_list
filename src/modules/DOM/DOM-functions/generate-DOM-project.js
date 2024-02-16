@@ -13,7 +13,7 @@ function projectDomify(project){
     const addTaskContainer = createElement({class:'add-task-container'}, 'div', '', [addTaskText,add_icon])
 
     const deleteTaskText = createElement({class:'delete-project-text'}, 'p', 'Delete project', [])
-    const delete_icon = createElement({class:`delete-project-text fa-solid fa-trash`}, 'i', '',[])
+    const delete_icon = createElement({class:`delete-project-icon fa-solid fa-trash`}, 'i', '',[])
 
     const deleteTaskContainer = createElement({class:'delete-project-container'}, 'div', '', [deleteTaskText,delete_icon])
 
