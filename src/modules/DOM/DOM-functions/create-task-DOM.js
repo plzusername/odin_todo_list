@@ -5,17 +5,6 @@ function createTask(task){
     const descriptionText=document.createTextNode(task.description)
 
     const check=createElement({class:'task-check', type:'checkbox'}, 'input', '', [])
-    // check.addEventListener('click',()=>{
-    //     const checkBox = event.target
-    //     const parentTask = checkBox.closest('.task-container')
-
-    //     if(checkBox.checked == true){
-    //         parentTask.classList.add('checked')
-    //     }
-    //     else{
-    //         parentTask.classList.remove('checked')
-    //     }
-    // })
     const taskTitle=createElement({class:'task-title'}, 'p', '', [titleText])
     const taskDescription=createElement({class:'task-description'}, 'p',  '', [descriptionText])
     const taskDateInput=createElement({class:'task-date-input', type:'date', value:task.due_date}, 'input',  '', [])
