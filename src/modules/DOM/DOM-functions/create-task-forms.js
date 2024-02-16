@@ -6,18 +6,8 @@ import { Storage, saveStorage } from '../../Storage/storage-utils/save-storage'
 
 let generatedTask
 
-const CircularJSON = require('circular-json')
-
 function addTaskToProjectStorage(){
-    // if (typeof Storage == 'string'){
-        // let parsedStorage = CircularJSON.parse(Storage)
-        // parsedStorage.projects[window.currentTaskForm].tasks.push(generatedTask)
-        // return parsedStorage
-    // }
-    // else{
-        // Storage.projects[window.currentTaskForm].tasks.push(generatedTask)
-        return Storage    
-    // }
+    return Storage    
 }
 
 
@@ -66,7 +56,6 @@ function createGenerateTaskForm(){
 
         parentProjectObject.addTask(generatedTask)
 
-        console.log(Storage)
         saveStorage(addTaskToProjectStorage)
 
         titleInput.value = ''
