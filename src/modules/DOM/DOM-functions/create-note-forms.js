@@ -9,10 +9,10 @@ function createGenerateNoteForm(){
     const descriptionInput=createElement({class:'description-input-note'}, 'input', '', [])
     const descriptionInputSection=createElement({class:'description-input-section-note'}, 'label', 'Description:', [descriptionInput])
 
-    const submitButton=createElement({class:'note-submit-button'} ,'button', `note`)
+    const submitButton=createElement({class:'note-submit-button', type:'submit'} ,'button', `note`)
 
 
-    const noteForm=createElement({class:`create-note-form`}, 'div', '', [formHeader,titleInputSection,descriptionInputSection,submitButton])
+    const noteForm=createElement({class:`create-note-form`}, 'form', '', [formHeader,titleInputSection,descriptionInputSection,submitButton])
 
     formHeader.textContent = 'Create note'
 
@@ -30,10 +30,10 @@ function createEditNoteForm(){
     const descriptionInput=createElement({class:'description-input-note'}, 'input', '', [])
     const descriptionInputSection=createElement({class:'description-input-section-note'}, 'label', 'Description:', [descriptionInput])
 
-    const submitButton=createElement({class:'note-submit-button'} ,'button', `note`)
+    const submitButton=createElement({class:'note-submit-button', type:'submit'} ,'button', `note`)
 
 
-    const noteForm=createElement({class:`edit-note-form`}, 'div', '', [formHeader,titleInputSection,descriptionInputSection,submitButton])
+    const noteForm=createElement({class:`edit-note-form`}, 'form', '', [formHeader,titleInputSection,descriptionInputSection,submitButton])
 
     formHeader.textContent = 'Edit note'
 
