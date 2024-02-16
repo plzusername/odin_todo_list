@@ -1,5 +1,6 @@
 import {viewAll} from './view-all-projects.js'
 import { trashSection } from './trash-section.js'
+import { redoIds } from './redoIds.js'
 
 class projectGenerator{
     constructor(title = `Project #${viewAll.projects.length + 1}`){
