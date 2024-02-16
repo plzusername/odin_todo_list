@@ -1,6 +1,5 @@
 import {viewAll} from './view-all-projects.js'
 import { trashSection } from './trash-section.js'
-import { redoIds } from './redoIds.js'
 
 class projectGenerator{
     constructor(title = `Project #${viewAll.projects.length + 1}`){
@@ -8,11 +7,6 @@ class projectGenerator{
         this.tasks=[]
         this.id=viewAll.projects.length 
 
-    }
-    
-    remove(){
-        viewAll.projects.splice(this.id,1)
-        redoIds(viewAll.projects)
     }
 
     addTask(task){

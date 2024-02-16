@@ -1,6 +1,8 @@
 const { isBefore, isAfter, add  } = require("date-fns");
 const { cloneDeep } = require('lodash')
 import { filterEmptyProjects } from "./remove-empty-project";
+import { redoIds } from './redoIds.js'
+
 class viewAll{
     static projects = []
 
@@ -25,6 +27,11 @@ class viewAll{
         viewAll.projects.push(project)
 
     }
+    static remove(project){
+        viewAll.projects.splice(project.id,1)
+        redoIds(viewAll.projects)
+    }
+
 }
 
 
