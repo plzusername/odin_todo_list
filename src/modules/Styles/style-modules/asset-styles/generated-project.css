@@ -20,3 +20,9 @@
     justify-content: space-between;
     margin-top: var(--add-task-margin-top);
 }
+
+.delete-project-container{
+    display: flex;
+    justify-content: space-between;
+    margin-top: var(--add-task-margin-top);
+}
