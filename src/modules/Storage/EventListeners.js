@@ -2,6 +2,7 @@ import {addProjet} from './itemStorage/addProject'
 import {showCreateTaskForm} from './itemStorage/showForm'
 import {removeTaskfromPage} from './itemStorage/removeTask'
 import { removeProjectFromPage } from './itemStorage/removeProject'
+import { checkTask } from './itemStorage/checkTask'
 
 document.addEventListener('DOMContentLoaded', ()=>{
     const addProjectButton = document.querySelector('.Add-project')
@@ -15,6 +16,7 @@ document.body.addEventListener('click',()=>{
         const addTaskButtons = document.querySelectorAll('.Add-task')
         const removeTaskButtons = document.querySelectorAll('.task-delete-icon')
         const removeProjectButtons = document.querySelectorAll('.delete-project-icon')
+        const checkTaskButtons = document.querySelectorAll('.task-check')
 
         addTaskButtons.forEach(addTaskButton => {
             addTaskButton.addEventListener('click',showCreateTaskForm)
@@ -24,6 +26,9 @@ document.body.addEventListener('click',()=>{
         })
         removeProjectButtons.forEach(removeProjectButton =>{
             removeProjectButton.addEventListener('click',removeProjectFromPage)
+        })
+        checkTaskButtons.forEach(checkTaskButton =>{
+            checkTaskButton.addEventListener('change',checkTask)
         })
     
     }
