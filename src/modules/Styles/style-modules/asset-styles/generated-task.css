@@ -4,6 +4,7 @@
     display: flex;
     height: var(--task-container-height);
     gap:var(--task-container-gap);
+    position: relative;
 }
 
 .task-left-side{
@@ -49,6 +50,42 @@ input[type='date']{
     opacity: 0.4;
 }
 
-.checked .task-title, .checked .task-description{
+.checked p{
     text-decoration:line-through;
 }
+
+.task-container[data-priority="Low"]::before,
+    .task-container[data-priority="Low"]::after{
+    content: url('../../../../Assets/face-smile-beam-solid.svg');
+    box-shadow: var(--icon-ofset) var(--icon-ofset) var(--icon-blur) var(--icon-spread) var(--icon-low);
+    background-color: var(--icon-low);
+}
+.task-container[data-priority="Medium"]::before,
+    .task-container[data-priority="Medium"]::after{
+    content: url('../../../../Assets/face-meh-solid.svg');
+    box-shadow: var(--icon-ofset) var(--icon-ofset) var(--icon-blur) var(--icon-spread) var(--icon-medium);
+    background-color: var(--icon-medium);
+}
+.task-container[data-priority="High"]::before,
+    .task-container[data-priority="High"]::after{
+    content: url('../../../../Assets/circle-exclamation-solid.svg');
+    box-shadow: var(--icon-ofset) var(--icon-ofset) var(--icon-blur) var(--icon-spread) var(--icon-high);
+    background-color: var(--icon-high);
+}
+
+.task-container::before, .task-container::after{
+    position: absolute;
+    width: var(--priority-icon-size);
+    height: var(--priority-icon-size);
+    top:var(--icon-distance-from-top);
+    box-shadow: var(--icon-ofset) var(--icon-ofset) var(--icon-blur) var(--icon-spread);
+}
+
+.task-container::after{
+    left: var(--icon-distance-from-task);
+}
+
+.task-container::before{
+    right: var(--icon-distance-from-task);
+}
+
