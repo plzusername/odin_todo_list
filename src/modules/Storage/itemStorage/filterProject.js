@@ -2,12 +2,15 @@ function filterProject(){
     const projects = document.querySelectorAll('.project-container')
 
     const clickedProjectID = event.target.dataset.id
-
+    
     projects.forEach(project =>{
-        project.style.display = 'none'
+        if(project.dataset.id != clickedProjectID){
+            project.style.display = 'none'
+        }
+        else{
+            project.style.display = 'block'
+        }
     })
-
-    projects[clickedProjectID].style.display = 'block'
 }
 
 export {filterProject}
