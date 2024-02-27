@@ -42,7 +42,7 @@
     /*Variables for projects*/
     --project-container-width:55%;
     --project-container-padding:18px;
-    --project-container-margin:15px;
+    --project-container-margin:24px;
     --add-task-margin-top:20px;
 
     /*Variables for forms*/
@@ -63,5 +63,14 @@
     --task-container-gap:32px;
     --description-top-margin:20px;
     --text-section-left-space:3%;
+    --priority-icon-size:1rem;
+    --icon-distance-from-task:-40px;
+    --icon-distance-from-top:40%;
+    --icon-ofset:0;
+    --icon-blur:12px;
+    --icon-spread:8px;
+    --icon-low:rgb(22, 205, 19);
+    --icon-medium:rgb(209, 213, 13);
+    --icon-high:rgb(223, 73, 14);
 
 }
