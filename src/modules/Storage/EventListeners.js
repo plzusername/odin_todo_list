@@ -21,6 +21,7 @@ document.body.addEventListener('click',()=>{
         const checkTaskButtons = document.querySelectorAll('.task-check')
         const editTaskButtons = document.querySelectorAll('.task-edit-icon')
         const filterProjects = document.querySelectorAll('.project-filter')
+        const viewAllProjects = document.querySelector('.view-all-filter')
 
         addTaskButtons.forEach(addTaskButton => {
             addTaskButton.addEventListener('click',showCreateTaskForm)
@@ -40,6 +41,7 @@ document.body.addEventListener('click',()=>{
         filterProjects.forEach(projectFIlter =>{
             projectFIlter.addEventListener('click', filterProject)
         })
+        viewAllProjects.addEventListener('click', filterProject)
     
     }
   
