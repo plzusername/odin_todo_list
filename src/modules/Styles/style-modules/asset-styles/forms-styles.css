@@ -1,6 +1,6 @@
 @import url('../root-variables.css');
 
-.edit-note-form, .edit-task-form, .create-note-form, .create-task-form{
+.edit-note-form, .edit-task-form, .create-note-form, .create-task-form, .day-form{
   border: var(--section-border) black solid;  
   background-color: white;
   border-radius: var(--form-border-radius);
@@ -20,7 +20,7 @@
   position: fixed;
 }
 
-.edit-note-form input, .edit-task-form input, .create-note-form input, .create-task-form input{
+.edit-note-form input, .edit-task-form input, .create-note-form input, .create-task-form input, .day-form input{
   display: block;
     background-color: white;
     border: none;
