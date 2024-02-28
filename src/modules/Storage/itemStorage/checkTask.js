@@ -16,6 +16,8 @@ function checkTask(){
 
     saveStorage(addProjectToStorage)
 
+    window.projects = document.querySelector('.content-section').querySelectorAll('.project-container')        
+
 }
 
 export {checkTask}

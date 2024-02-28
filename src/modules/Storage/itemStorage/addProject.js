@@ -4,6 +4,7 @@ import { content } from '../../DOM/generate-content/generate-content-section'
 import { projectDomify } from '../../DOM/DOM-functions/generate-DOM-project'
 import { Storage, saveStorage } from '../storage-utils/save-storage'
 import { generateFilter } from '../../DOM/DOM-functions/generate-filter'
+import { viewProjects } from './viewAllProjects'
 
 let generatedProject
 
@@ -32,6 +33,10 @@ function addProjet(){
     projectFilter.dataset.id = generatedProject.id
     const sideBarProjects = document.querySelector('.sideBar-projects-section')
     sideBarProjects.appendChild(projectFilter)
+
+    window.projects = document.querySelector('.content-section').querySelectorAll('.project-container')
+
+    viewProjects()
 
 }
 

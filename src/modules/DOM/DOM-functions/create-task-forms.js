@@ -69,6 +69,8 @@ function createGenerateTaskForm(){
         taskForm.classList.remove('visible')
 
         event.preventDefault()
+
+        window.projects = document.querySelector('.content-section').querySelectorAll('.project-container')  
     })
 
     return taskForm
@@ -130,6 +132,8 @@ function createEditTaskForm(){
         taskForm.classList.remove('visible')
 
         event.preventDefault()
+
+        window.projects = document.querySelector('.content-section').querySelectorAll('.project-container')  
   
     })
 

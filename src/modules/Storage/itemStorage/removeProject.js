@@ -1,6 +1,7 @@
 import { viewAll } from '../../Logic/view-all-projects'
 import { Storage, saveStorage } from '../storage-utils/save-storage'
 import { redoIds } from '../../Logic/redoIds'
+import { viewProjects } from './viewAllProjects'
 
 let removedProject
 
@@ -35,6 +36,10 @@ function removeProjectFromPage(){
     const allFilters = document.querySelectorAll('.project-filter')
 
     redoIds('none', allFilters)
+
+    window.projects = document.querySelector('.content-section').querySelectorAll('.project-container')  
+    
+    viewProjects()
 
 }
 
