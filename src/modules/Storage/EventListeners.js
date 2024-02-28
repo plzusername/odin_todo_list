@@ -5,11 +5,15 @@ import { removeProjectFromPage } from './itemStorage/removeProject'
 import { checkTask } from './itemStorage/checkTask'
 import { showEditTaskForm } from './itemStorage/showEditTaskForm'
 import { filterProject } from './itemStorage/filterProject'
+import { showNumberInput } from './itemStorage/showDateInput'
+import { viewProjects } from './itemStorage/viewAllProjects'
 
 document.addEventListener('DOMContentLoaded', ()=>{
     const addProjectButton = document.querySelector('.Add-project')
 
     addProjectButton.addEventListener('click', addProjet)
+
+    window.projects = document.querySelector('.content-section').querySelectorAll('.project-container')        
 })
 
 document.body.addEventListener('click',()=>{
@@ -22,6 +26,7 @@ document.body.addEventListener('click',()=>{
         const editTaskButtons = document.querySelectorAll('.task-edit-icon')
         const filterProjects = document.querySelectorAll('.project-filter')
         const viewAllProjects = document.querySelector('.view-all-filter')
+        const dateFilter = document.querySelector('.time-filter')
 
         addTaskButtons.forEach(addTaskButton => {
             addTaskButton.addEventListener('click',showCreateTaskForm)
@@ -41,7 +46,9 @@ document.body.addEventListener('click',()=>{
         filterProjects.forEach(projectFIlter =>{
             projectFIlter.addEventListener('click', filterProject)
         })
-        viewAllProjects.addEventListener('click', filterProject)
+        viewAllProjects.addEventListener('click', viewProjects)
+
+        dateFilter.addEventListener('click', showNumberInput)
     
     }
   
