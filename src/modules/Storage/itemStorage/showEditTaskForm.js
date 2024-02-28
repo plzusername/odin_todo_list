@@ -22,6 +22,7 @@ function showEditTaskForm(){
     descriptionInput.value = taskDescription
     priorityInput.value = taskPriority
     dateInput.value = taskDate
+    
 }
 
 export {showEditTaskForm}
