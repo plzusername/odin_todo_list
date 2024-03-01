@@ -7,11 +7,26 @@ import { showEditTaskForm } from './itemStorage/taskStorage/showEditTaskForm'
 import { filterProject } from './itemStorage/accessibility/filterProject'
 import { showNumberInput } from './itemStorage/accessibility/showDateInput'
 import { viewProjects } from './itemStorage/accessibility/viewAllProjects'
+import { switchToNotesSection } from './itemStorage/accessibility/notesSectionFilter'
+import { switchBetweenSections } from './itemStorage/accessibility/sectionSwitching'
 
 document.addEventListener('DOMContentLoaded', ()=>{
     const addProjectButton = document.querySelector('.Add-project')
+    const viewAllProjects = document.querySelector('.view-all-filter')
+    const dateFilter = document.querySelector('.time-filter')
+    const notesSection = document.querySelector('.notes-section')
+    const sectionFilters = document.querySelectorAll('.filter-container:not(.project-filter):not(.time-filter)')
 
     addProjectButton.addEventListener('click', addProjet)
+    sectionFilters.forEach(sectionFilter =>{
+        sectionFilter.addEventListener('click',switchBetweenSections)
+    })
+    viewAllProjects.addEventListener('click',viewProjects)
+
+    dateFilter.addEventListener('click', showNumberInput)
+
+    notesSection.addEventListener('click', switchToNotesSection)
+
 })
 
 document.body.addEventListener('click',()=>{
@@ -23,8 +38,6 @@ document.body.addEventListener('click',()=>{
         const checkTaskButtons = document.querySelectorAll('.task-check')
         const editTaskButtons = document.querySelectorAll('.task-edit-icon')
         const filterProjects = document.querySelectorAll('.project-filter')
-        const viewAllProjects = document.querySelector('.view-all-filter')
-        const dateFilter = document.querySelector('.time-filter')
 
         addTaskButtons.forEach(addTaskButton => {
             addTaskButton.addEventListener('click',showCreateTaskForm)
@@ -44,9 +57,6 @@ document.body.addEventListener('click',()=>{
         filterProjects.forEach(projectFIlter =>{
             projectFIlter.addEventListener('click', filterProject)
         })
-        viewAllProjects.addEventListener('click', viewProjects)
-
-        dateFilter.addEventListener('click', showNumberInput)
     
     }
   
