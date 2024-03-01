@@ -12,8 +12,6 @@ document.addEventListener('DOMContentLoaded', ()=>{
     const addProjectButton = document.querySelector('.Add-project')
 
     addProjectButton.addEventListener('click', addProjet)
-
-    window.projects = document.querySelector('.content-section').querySelectorAll('.project-container')        
 })
 
 document.body.addEventListener('click',()=>{
