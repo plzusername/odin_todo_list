@@ -9,7 +9,9 @@ function viewProjects(){
 
     window.projects.forEach(project => {
         content.appendChild(project)
-        project.style.display = 'block'
+        if(project.style.display == 'none'){
+            project.style.display = 'block'
+        }
     });
 }
 
