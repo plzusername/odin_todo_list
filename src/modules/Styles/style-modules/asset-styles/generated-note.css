@@ -1,0 +1,23 @@
+@import url('../root-variables.css');
+
+.note-container{
+    border: solid var(--note-border-size) var(--note-border-color);
+    padding:var(--note-padding);
+    margin:var(--note-margin);
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    height: var(--note-height);
+    width: var(--note-width);
+}
+.note-right-side{
+    display: flex;
+    gap:var(--icons-gap);
+    align-items: center;
+}
+.note-left-side{
+    align-items: start;
+}
+.note-right-side i{
+    font-size: var(--note-icon-size);
+}

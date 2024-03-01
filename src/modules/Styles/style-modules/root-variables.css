@@ -73,4 +73,15 @@
     --icon-medium:rgb(209, 213, 13);
     --icon-high:rgb(223, 73, 14);
 
+    /* Variables for notes */
+
+    --note-border-size:4px;
+    --note-border-color:rgb(16, 195, 156);
+    --note-padding:20px;
+    --note-margin:24px;
+    --note-width:640px;
+    --note-height:128px;
+    --icons-gap:15px;
+    --note-icon-size:16px;
+
 }

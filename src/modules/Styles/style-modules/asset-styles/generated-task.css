@@ -23,14 +23,10 @@
     align-self: center;
     margin-left: var(--text-container-margin);
     margin-top: 32px;
-    position: absolute;
     left: var(--text-section-left-space);
     position: relative;
 }
 
-.task-text-container  p{
-    word-wrap: break-word;
-}
 
 input[type='date']{
     border: none;
