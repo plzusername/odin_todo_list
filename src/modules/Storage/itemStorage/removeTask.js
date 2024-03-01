@@ -26,7 +26,7 @@ function removeTaskfromPage(){
 
     redoIds(parentProjectObj.tasks, parent_projects_tasks)
 
-    window.projects = document.querySelector('.content-section').querySelectorAll('.project-container')        
+    window.projects = Array.from(document.querySelector('.content-section').querySelectorAll('.project-container')) 
 
 }
 

@@ -34,7 +34,7 @@ function addProjet(){
     const sideBarProjects = document.querySelector('.sideBar-projects-section')
     sideBarProjects.appendChild(projectFilter)
 
-    window.projects = document.querySelector('.content-section').querySelectorAll('.project-container')
+    window.projects = Array.from(document.querySelector('.content-section').querySelectorAll('.project-container')) 
 
     viewProjects()
 

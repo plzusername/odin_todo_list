@@ -70,7 +70,7 @@ function createGenerateTaskForm(){
 
         event.preventDefault()
 
-        window.projects = document.querySelector('.content-section').querySelectorAll('.project-container')  
+        window.projects = Array.from(document.querySelector('.content-section').querySelectorAll('.project-container')) 
     })
 
     return taskForm
@@ -133,7 +133,7 @@ function createEditTaskForm(){
 
         event.preventDefault()
 
-        window.projects = document.querySelector('.content-section').querySelectorAll('.project-container')  
+        window.projects = Array.from(document.querySelector('.content-section').querySelectorAll('.project-container')) 
   
     })
 

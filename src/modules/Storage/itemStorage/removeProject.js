@@ -37,7 +37,7 @@ function removeProjectFromPage(){
 
     redoIds('none', allFilters)
 
-    window.projects = document.querySelector('.content-section').querySelectorAll('.project-container')  
+    window.projects = Array.from(document.querySelector('.content-section').querySelectorAll('.project-container')) 
     
     viewProjects()
 

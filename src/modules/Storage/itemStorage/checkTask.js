@@ -16,7 +16,7 @@ function checkTask(){
 
     saveStorage(addProjectToStorage)
 
-    window.projects = document.querySelector('.content-section').querySelectorAll('.project-container')        
+    window.projects = Array.from(document.querySelector('.content-section').querySelectorAll('.project-container')) 
 
 }
 
