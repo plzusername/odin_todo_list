@@ -1,6 +1,6 @@
-import { viewAll } from '../../Logic/view-all-projects'
-import { Storage, saveStorage } from '../storage-utils/save-storage'
-import { redoIds } from '../../Logic/redoIds'
+import { viewAll } from '../../../Logic/view-all-projects'
+import { Storage, saveStorage } from '../../storage-utils/save-storage'
+import { redoIds } from '../../../Logic/redoIds'
 
 let removedTask
 

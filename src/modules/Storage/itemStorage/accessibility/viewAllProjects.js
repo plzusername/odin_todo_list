@@ -1,4 +1,4 @@
-import { content } from "../../DOM/generate-content/generate-content-section";
+import { content } from "../../../DOM/generate-content/generate-content-section";
 
 function viewProjects(){
     const projects = content.querySelectorAll('.project-container')

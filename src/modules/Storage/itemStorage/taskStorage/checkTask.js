@@ -1,5 +1,5 @@
-import { viewAll } from '../../Logic/view-all-projects'
-import { Storage, saveStorage } from '../storage-utils/save-storage'
+import { viewAll } from '../../../Logic/view-all-projects'
+import { Storage, saveStorage } from '../../storage-utils/save-storage'
 
 function addProjectToStorage(){
     return Storage

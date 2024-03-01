@@ -1,12 +1,12 @@
-import {addProjet} from './itemStorage/addProject'
-import {showCreateTaskForm} from './itemStorage/showForm'
-import {removeTaskfromPage} from './itemStorage/removeTask'
-import { removeProjectFromPage } from './itemStorage/removeProject'
-import { checkTask } from './itemStorage/checkTask'
-import { showEditTaskForm } from './itemStorage/showEditTaskForm'
-import { filterProject } from './itemStorage/filterProject'
-import { showNumberInput } from './itemStorage/showDateInput'
-import { viewProjects } from './itemStorage/viewAllProjects'
+import {addProjet} from './itemStorage/projectStorage/addProject'
+import {showCreateTaskForm} from './itemStorage/taskStorage/showForm'
+import {removeTaskfromPage} from './itemStorage/taskStorage/removeTask'
+import { removeProjectFromPage } from './itemStorage/projectStorage/removeProject'
+import { checkTask } from './itemStorage/taskStorage/checkTask'
+import { showEditTaskForm } from './itemStorage/taskStorage/showEditTaskForm'
+import { filterProject } from './itemStorage/accessibility/filterProject'
+import { showNumberInput } from './itemStorage/accessibility/showDateInput'
+import { viewProjects } from './itemStorage/accessibility/viewAllProjects'
 
 document.addEventListener('DOMContentLoaded', ()=>{
     const addProjectButton = document.querySelector('.Add-project')

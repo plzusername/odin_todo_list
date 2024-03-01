@@ -1,10 +1,10 @@
-import { viewAll } from '../../Logic/view-all-projects'
-import { projectGenerator } from '../../Logic/project-Generator'
-import { content } from '../../DOM/generate-content/generate-content-section'
-import { projectDomify } from '../../DOM/DOM-functions/generate-DOM-project'
-import { Storage, saveStorage } from '../storage-utils/save-storage'
-import { generateFilter } from '../../DOM/DOM-functions/generate-filter'
-import { viewProjects } from './viewAllProjects'
+import { viewAll } from '../../../Logic/view-all-projects'
+import { projectGenerator } from '../../../Logic/project-Generator'
+import { content } from '../../../DOM/generate-content/generate-content-section'
+import { projectDomify } from '../../../DOM/DOM-functions/generate-DOM-project'
+import { Storage, saveStorage } from '../../storage-utils/save-storage'
+import { generateFilter } from '../../../DOM/DOM-functions/generate-filter'
+import { viewProjects } from '../accessibility/viewAllProjects'
 
 let generatedProject
 
