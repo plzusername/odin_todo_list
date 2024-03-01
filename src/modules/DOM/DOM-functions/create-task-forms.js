@@ -15,11 +15,11 @@ function addTaskToProjectStorage(){
 function createGenerateTaskForm(){
     const formHeader=createElement({class:'task-form-header'}, 'h1', `task`, [])
 
-    const titleInput=createElement({class:'title-input-task-create'}, 'input', '', [])
+    const titleInput=createElement({class:'title-input-task-create', maxlength:'40'}, 'input', '', [])
     titleInput.required=true
     const titleInputSection=createElement({class:'title-input-task-section'}, 'label', 'Title:', [titleInput])
 
-    const descriptionInput=createElement({class:'description-input-task-create'}, 'input', '', [])
+    const descriptionInput=createElement({class:'description-input-task-create', maxlength:'70'}, 'input', '', [])
     descriptionInput.required=true
     const descriptionInputSection=createElement({class:'description-input-task-section'}, 'label', 'Description:', [descriptionInput])
 
@@ -80,11 +80,11 @@ function createGenerateTaskForm(){
 function createEditTaskForm(){
     const formHeader=createElement({class:'task-form-header'}, 'h1', `task`, [])
 
-    const titleInput=createElement({class:'title-input-task-edit'}, 'input', '', [])
+    const titleInput=createElement({class:'title-input-task-edit', maxlength:'40'}, 'input', '', [])
     titleInput.required=true
     const titleInputSection=createElement({class:'title-input-task-section'}, 'label', 'Title:', [titleInput])
 
-    const descriptionInput=createElement({class:'description-input-task-edit'}, 'input', '', [])
+    const descriptionInput=createElement({class:'description-input-task-edit', maxlength:'70'}, 'input', '', [])
     descriptionInput.required=true
     const descriptionInputSection=createElement({class:'description-input-task-section'}, 'label', 'Description:', [descriptionInput])
 
