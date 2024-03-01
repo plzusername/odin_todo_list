@@ -2,6 +2,7 @@ const { isBefore, isAfter, add  } = require("date-fns");
 import { createElement } from "../utility/createElement"
 import { Storage, saveStorage } from "../../Storage/storage-utils/save-storage"
 import { content } from "../generate-content/generate-content-section"
+import { switchBetweenSections } from "../../Storage/itemStorage/accessibility/sectionSwitching";
 
 function filterDate(){
     return Storage
@@ -24,9 +25,7 @@ function createNumberInputForm(){
     dayForm.addEventListener('submit',()=>{
         const daysToFilter = +titleInput.value
 
-        window.projects.forEach(project =>{
-            project.remove()
-        })
+        switchBetweenSections()
 
         window.projects.forEach(project =>{
             project = project.cloneNode(true)
