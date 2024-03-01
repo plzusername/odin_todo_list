@@ -1,6 +1,5 @@
 const { isBefore, isAfter, add  } = require("date-fns");
 const { cloneDeep } = require('lodash')
-import { filterEmptyProjects } from "./remove-empty-project";
 import { redoIds } from './redoIds.js'
 
 class viewAll{
@@ -20,7 +19,7 @@ class viewAll{
             );
         });
 
-        return filterEmptyProjects(toBeFilteredArray)
+        return toBeFilteredArray
     }
 
     static addProject(project){
