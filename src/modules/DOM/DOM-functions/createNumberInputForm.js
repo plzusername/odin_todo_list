@@ -1,6 +1,11 @@
+const { isBefore, isAfter, add  } = require("date-fns");
 import { createElement } from "../utility/createElement"
-import { viewAll } from "../../Logic/view-all-projects"
-import { Storage } from "../../Storage/storage-utils/save-storage"
+import { Storage, saveStorage } from "../../Storage/storage-utils/save-storage"
+import { content } from "../generate-content/generate-content-section"
+
+function filterDate(){
+    return Storage
+}
 
 function createNumberInputForm(){
     const dayFormHeader=createElement({class:'day-form-header'}, 'h1', `task`, [])
@@ -17,16 +22,34 @@ function createNumberInputForm(){
     dayFormHeader.textContent = 'Set day amount'
 
     dayForm.addEventListener('submit',()=>{
+        const daysToFilter = +titleInput.value
 
-        Storage.tempDateFiltered = viewAll.filterTasksBasedOnDays(+titleInput.value)
+        window.projects.forEach(project =>{
+            project.remove()
+        })
 
-        window.projects = document.querySelector('.content-section').querySelectorAll('.project-container')        
+        window.projects.forEach(project =>{
+            project = project.cloneNode(true)
+            content.appendChild(project)
+            const tasks = project.querySelectorAll('.task-container')
+            tasks.forEach(task =>{
+                const taskDateValue = task.querySelector('.task-date-input').value
+                const beforeOrAfterToday = daysToFilter > 0 ? isAfter(taskDateValue, new Date()) : isBefore(taskDateValue, new Date())
+                const withinDayLimit = daysToFilter > 0 ? isBefore(taskDateValue, add(new Date(), { days: daysToFilter })) : isAfter(taskDateValue, add(new Date(), { days: daysToFilter }))
+
+                if(!beforeOrAfterToday || !withinDayLimit){
+                    task.remove()
+                }
+            })
+        })
 
         dayForm.classList.remove('visible')
 
         titleInput.value = null
 
         event.preventDefault()
+
+        saveStorage(filterDate)
     })
 
     return dayForm
