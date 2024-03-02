@@ -1,13 +1,15 @@
 import { content } from "../../../DOM/generate-content/generate-content-section";
-import { switchBetweenSections } from "./sectionSwitching";
 
 function viewProjects(){
+    const projects = content.querySelectorAll('.project-container')
 
-    switchBetweenSections()
+    projects.forEach(project =>{
+        project.remove()
+    })
 
     window.projects.forEach(project => {
         content.appendChild(project)
-    });    
+    });
 }
 
 export{viewProjects}
