@@ -7,7 +7,7 @@ function viewProjects(){
 
     window.projects.forEach(project => {
         content.appendChild(project)
-    });
+    });    
 }
 
 export{viewProjects}

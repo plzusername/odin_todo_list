@@ -13,7 +13,7 @@ function filterProject(){
     const clickedProjectID = event.target.dataset.id
 
     projects.forEach(project =>{
-        if(project.dataset.id != clickedProjectID && clickedProjectID != undefined){
+        if(project.dataset.id != clickedProjectID){
             project.remove()
         }
     })

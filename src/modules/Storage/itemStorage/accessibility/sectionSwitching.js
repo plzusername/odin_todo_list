@@ -4,6 +4,5 @@ function switchBetweenSections(){
     nonFormContent.forEach(item =>{
         item.remove()
     })
-    console.log(nonFormContent)
 }
 export {switchBetweenSections}

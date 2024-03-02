@@ -1,4 +1,8 @@
+import { notesGenerator } from "../../Logic/notes-generator";
+import { notesSection } from "../../Logic/notes-section";
+import { content } from "../generate-content/generate-content-section";
 import { createElement } from "../utility/createElement";
+import { noteDomification } from "./noteDomification";
 
 function createGenerateNoteForm(){
     const formHeader=createElement({class:'note-form-header'}, 'h1', `task`, [])
@@ -16,7 +20,25 @@ function createGenerateNoteForm(){
 
     formHeader.textContent = 'Create note'
 
-    submitButton.addEventListener('click' ,()=>{})
+    submitButton.addEventListener('click' ,()=>{
+
+        generatedTask = new notesGenerator(titleInput.value , descriptionInput.value)
+
+        notesSection.addItem(generatedTask)
+
+        saveStorage(addTaskToProjectStorage)
+
+        titleInput.value = ''
+        descriptionInput.value = ''
+        dueDateInput.value = null
+        priorityInput.selectedIndex = 0
+
+        content.appendChild(noteDomification(generatedTask))
+
+        taskForm.classList.remove('visible')
+
+        event.preventDefault()
+    })
 
     return noteForm    
 }

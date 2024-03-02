@@ -21,3 +21,17 @@
 .note-right-side i{
     font-size: var(--note-icon-size);
 }
+.content-section > .note-adder-container{
+    align-self: flex-end;
+    justify-self: flex-end;
+    display: flex;
+    flex: 1;
+    justify-items: flex-end;
+    align-items: flex-end;
+}
+.content-section .add-project-input{
+    background-color: transparent;
+}
+.content-section  .add-project-section{
+    margin: var(--note-adder-margin);
+}
