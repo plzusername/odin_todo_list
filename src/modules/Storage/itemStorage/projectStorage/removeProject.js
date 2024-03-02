@@ -2,6 +2,7 @@ import { viewAll } from '../../../Logic/view-all-projects'
 import { Storage, saveStorage } from '../../storage-utils/save-storage'
 import { redoIds } from '../../../Logic/redoIds'
 import { viewProjects } from '../accessibility/viewAllProjects'
+import { content } from '../../../DOM/generate-content/generate-content-section'
 
 let removedProject
 
@@ -25,7 +26,16 @@ function removeProjectFromPage(){
 
     saveStorage(addProjectToStorage)
 
+    window.projects.forEach(project => {
+        content.appendChild(project)
+    });
+
     removedProjectDOM.remove()
+
+    window.projects = Array.from(document.querySelector('.content-section').querySelectorAll('.project-container')) 
+    
+    // viewProjects()
+
 
     const parent_projects_tasks = document.querySelectorAll('.project-container')
 
@@ -37,9 +47,6 @@ function removeProjectFromPage(){
 
     redoIds('none', allFilters)
 
-    window.projects = Array.from(document.querySelector('.content-section').querySelectorAll('.project-container')) 
-    
-    viewProjects()
 
 }
 

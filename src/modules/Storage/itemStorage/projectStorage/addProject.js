@@ -27,12 +27,18 @@ function addProjet(){
 
     saveStorage(addProjectToStorage)
 
-    content.appendChild(projectDomify(generatedProject))
+    const DOMproject = projectDomify(generatedProject)
 
     const projectFilter = generateFilter(generatedProject.title, 'project-filter')
     projectFilter.dataset.id = generatedProject.id
     const sideBarProjects = document.querySelector('.sideBar-projects-section')
     sideBarProjects.appendChild(projectFilter)
+
+    window.projects.forEach(project => {
+        content.appendChild(project)
+    });    
+
+    content.appendChild(DOMproject)
 
     window.projects = Array.from(document.querySelector('.content-section').querySelectorAll('.project-container')) 
 
