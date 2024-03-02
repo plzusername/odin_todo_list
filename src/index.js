@@ -4,6 +4,8 @@ import { footer } from './modules/DOM/generate-content/generate-footer.js'
 import { sideBar } from './modules/DOM/generate-content/generate-sideBar.js';
 import { content } from './modules/DOM/generate-content/generate-content-section.js';
 import '../src/modules/Styles/main.css'
+window.projects = []
+
 
 document.body.appendChild(header)
 document.body.appendChild(sideBar)
