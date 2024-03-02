@@ -1,12 +1,10 @@
 import { content } from "../../../DOM/generate-content/generate-content-section"
+import { switchBetweenSections } from "./sectionSwitching"
 
 function filterProject(){
     const projects = Array.from(window.projects)
-    const projectsToBeDeleted = Array.from(document.querySelectorAll('.project-container'))
 
-    projectsToBeDeleted.forEach(project =>{
-        project.remove()
-    })
+    switchBetweenSections()
 
     projects.forEach(project =>{
         content.appendChild(project)
