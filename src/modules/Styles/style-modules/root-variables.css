@@ -36,8 +36,8 @@
     --github-username-size:30px;
     --hover-letter-spacing:3px;
     --footer-transition:300ms ease-in;
-    --hover-affect-width:230%;
-    --hover-affect-distance-from-link:-250%;
+    --hover-affect-width:24vw;
+    --hover-affect-distance-from-link:calc(1vw + 200px);
 
     /*Variables for projects*/
     --project-container-width:55%;
