@@ -3,6 +3,14 @@ import { notesSection } from "../../Logic/notes-section";
 import { content } from "../generate-content/generate-content-section";
 import { createElement } from "../utility/createElement";
 import { noteDomification } from "./noteDomification";
+import { saveStorage, Storage } from "../../Storage/storage-utils/save-storage";
+
+let generatedNote
+
+function addTaskToStorage(){
+    Storage.notes.push(generatedNote)
+    return Storage
+}
 
 function createGenerateNoteForm(){
     const formHeader=createElement({class:'note-form-header'}, 'h1', `task`, [])
@@ -13,6 +21,9 @@ function createGenerateNoteForm(){
     const descriptionInput=createElement({class:'description-input-note'}, 'input', '', [])
     const descriptionInputSection=createElement({class:'description-input-section-note'}, 'label', 'Description:', [descriptionInput])
 
+    titleInput.required = true
+    descriptionInput.required = true
+
     const submitButton=createElement({class:'note-submit-button', type:'submit'} ,'button', `note`)
 
 
@@ -20,22 +31,23 @@ function createGenerateNoteForm(){
 
     formHeader.textContent = 'Create note'
 
-    submitButton.addEventListener('click' ,()=>{
+    noteForm.addEventListener('submit' ,()=>{
 
-        generatedTask = new notesGenerator(titleInput.value , descriptionInput.value)
+        generatedNote = new notesGenerator(titleInput.value , descriptionInput.value)
 
-        notesSection.addItem(generatedTask)
+        notesSection.addItem(generatedNote)
 
-        saveStorage(addTaskToProjectStorage)
+        saveStorage(addTaskToStorage)
 
         titleInput.value = ''
         descriptionInput.value = ''
-        dueDateInput.value = null
-        priorityInput.selectedIndex = 0
 
-        content.appendChild(noteDomification(generatedTask))
+        const noteDOM = noteDomification(generatedNote)
+        const noteAdder = document.querySelector('.note-adder-container')
 
-        taskForm.classList.remove('visible')
+        content.insertBefore(noteDOM, noteAdder)
+
+        noteForm.classList.remove('visible')
 
         event.preventDefault()
     })
