@@ -9,6 +9,7 @@ import { showNumberInput } from './itemStorage/accessibility/showDateInput'
 import { viewProjects } from './itemStorage/accessibility/viewAllProjects'
 import { switchToNotesSection } from './itemStorage/accessibility/notesSectionFilter'
 import { switchBetweenSections } from './itemStorage/accessibility/sectionSwitching'
+import { showNoteForm } from './itemStorage/noteStorage/showNoteForm'
 
 document.addEventListener('DOMContentLoaded', ()=>{
     const addProjectButton = document.querySelector('.Add-project')
@@ -26,7 +27,6 @@ document.addEventListener('DOMContentLoaded', ()=>{
     dateFilter.addEventListener('click', showNumberInput)
 
     notesSection.addEventListener('click', switchToNotesSection)
-
 })
 
 document.body.addEventListener('click',()=>{
@@ -58,6 +58,12 @@ document.body.addEventListener('click',()=>{
             projectFIlter.addEventListener('click', filterProject)
         })
     
+    }
+    if(document.body.contains(document.querySelector('.Create-Note'))){
+        const showNoteAdderForm = document.querySelector('.Create-Note')
+
+        showNoteAdderForm.addEventListener('click', showNoteForm)
+
     }
   
 })
