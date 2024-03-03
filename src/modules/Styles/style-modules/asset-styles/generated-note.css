@@ -29,9 +29,9 @@
     justify-items: flex-end;
     align-items: flex-end;
 }
-.content-section .add-project-input{
-    background-color: transparent;
-}
 .content-section  .add-project-section{
     margin: var(--note-adder-margin);
+}
+.content-section .add-project-section span{
+    margin-right: var(--note-add-text-margin);
 }
