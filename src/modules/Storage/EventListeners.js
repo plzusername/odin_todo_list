@@ -10,6 +10,7 @@ import { viewProjects } from './itemStorage/accessibility/viewAllProjects'
 import { switchToNotesSection } from './itemStorage/accessibility/notesSectionFilter'
 import { switchBetweenSections } from './itemStorage/accessibility/sectionSwitching'
 import { showNoteForm } from './itemStorage/noteStorage/showNoteForm'
+import { removeNote } from './itemStorage/noteStorage/removeNote'
 
 document.addEventListener('DOMContentLoaded', ()=>{
     const addProjectButton = document.querySelector('.Add-project')
@@ -61,8 +62,12 @@ document.body.addEventListener('click',()=>{
     }
     if(document.body.contains(document.querySelector('.Create-Note'))){
         const showNoteAdderForm = document.querySelector('.Create-Note')
+        const removeNotes = document.querySelectorAll('.note-delete-icon')
 
         showNoteAdderForm.addEventListener('click', showNoteForm)
+        removeNotes.forEach(removeButton =>{
+            removeButton.addEventListener('click', removeNote)
+        })
 
     }
   
