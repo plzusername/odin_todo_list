@@ -5,7 +5,7 @@ class notesSection{
     static notes=[]
 
     static addItem(note){
-        notesSection.notes.push()
+        notesSection.notes.push(note)
     }
     
     static removeNote(note){
