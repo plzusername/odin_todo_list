@@ -6,6 +6,7 @@ let removedNote
 
 function addProjectToStorage(){
     Storage.notes.splice(event.target.closest('.note-container').dataset.id,1)
+    redoIds(Storage.notes)
     return Storage
 }
 
@@ -24,6 +25,7 @@ function removeNote(){
     const DOM_notes = document.querySelectorAll('.note-container')
 
     redoIds(notesSection.notes, DOM_notes)
+
 
 }
 
