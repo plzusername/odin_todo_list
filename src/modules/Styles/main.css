@@ -6,6 +6,7 @@
 @import url('./style-modules/asset-styles/forms-styles.css');
 @import url('./style-modules/asset-styles/generated-task.css');
 @import url('./style-modules/asset-styles/generated-note.css');
+@import url('./style-modules/asset-styles/trash-section.css');
 
 *{
     box-sizing: border-box;
