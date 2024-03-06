@@ -1,18 +1,14 @@
 import { content } from "../../../DOM/generate-content/generate-content-section"
 import { switchBetweenSections } from "./sectionSwitching"
+import { domifyStorageProjects } from "../projectStorage/domifyProjectStorage"
 
 function filterProject(){
-    const projects = Array.from(window.projects)
-
     switchBetweenSections()
 
-    projects.forEach(project =>{
-        content.appendChild(project)
-    })
+    let clickedProjectID = event.target.dataset.id || event.target.closest('.project-filter').dataset.id
+    const DOMProjects = domifyStorageProjects()
 
-    const clickedProjectID = event.target.dataset.id
-
-    projects.forEach(project =>{
+    DOMProjects.forEach(project =>{
         if(project.dataset.id != clickedProjectID){
             project.remove()
         }
