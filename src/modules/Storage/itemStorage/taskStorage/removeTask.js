@@ -3,16 +3,19 @@ import { Storage, saveStorage } from '../../storage-utils/save-storage'
 import { redoIds } from '../../../Logic/redoIds'
 
 let removedTask
+let parentProjectObj
+let removeButton
 
 function addProjectToStorage(){
+    Storage.projects[parentProjectObj.id].tasks.splice(removeButton.dataset.id,1)
     return Storage
 }
 
 function removeTaskfromPage(){
 
-    const removeButton = event.target
+    removeButton = event.target
     const parentProjectElement = removeButton.closest('.project-container')
-    const parentProjectObj = viewAll.projects[parentProjectElement.dataset.id]
+    parentProjectObj = viewAll.projects[parentProjectElement.dataset.id]
 
     removedTask = parentProjectObj.tasks[removeButton.closest('.task-container').dataset.id]
 
