@@ -11,6 +11,7 @@ import { switchToNotesSection } from './itemStorage/accessibility/notesSectionFi
 import { switchBetweenSections } from './itemStorage/accessibility/sectionSwitching'
 import { showNoteForm } from './itemStorage/noteStorage/showNoteForm'
 import { removeNote } from './itemStorage/noteStorage/removeNote'
+import { reinstateFilters, domifyStorageProjects } from './itemStorage/projectStorage/domifyProjectStorage';
 
 document.addEventListener('DOMContentLoaded', ()=>{
     const addProjectButton = document.querySelector('.Add-project')
@@ -28,6 +29,9 @@ document.addEventListener('DOMContentLoaded', ()=>{
     dateFilter.addEventListener('click', showNumberInput)
 
     notesSection.addEventListener('click', switchToNotesSection)
+
+    domifyStorageProjects()
+    reinstateFilters()
 })
 
 document.body.addEventListener('click',()=>{
