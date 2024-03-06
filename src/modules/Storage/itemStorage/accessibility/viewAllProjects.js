@@ -1,14 +1,9 @@
-import { content } from "../../../DOM/generate-content/generate-content-section";
 import { switchBetweenSections } from "./sectionSwitching";
+import { domifyStorageProjects } from "../projectStorage/domifyProjectStorage";
 
 function viewProjects(){
     switchBetweenSections()
-
-    if(window.projects){
-        window.projects.forEach(project => {
-            content.appendChild(project)
-        });    
-    }
+    domifyStorageProjects()
 }
 
 export{viewProjects}
