@@ -5,7 +5,8 @@ import { createNumberInputForm } from '../DOM-functions/createNumberInputForm.js
 import { createTrashSection } from '../DOM-functions/createTrashSection.js'
 
 function createContentSection(){
-    const content_section=createElement({class:'content-section'}, 'div', '', [createEditNoteForm(), createEditTaskForm(), createGenerateNoteForm(), createGenerateTaskForm(), createNumberInputForm(), createTrashSection()])
+    const formAffect = createElement({class:'form-affect'}, 'div', '', [])
+    const content_section=createElement({class:'content-section'}, 'div', '', [createEditNoteForm(), createEditTaskForm(), createGenerateNoteForm(), createGenerateTaskForm(), createNumberInputForm(), formAffect, ])
 
     return content_section
 }
