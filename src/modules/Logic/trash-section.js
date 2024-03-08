@@ -15,7 +15,7 @@ class trashSection{
     static restoreFromTrash(task){
         trashSection.removeFromTrash(task)
         if ('editNote' in Object.getPrototypeOf(task)){
-            notesSection.addNote(task)
+            notesSection.addItem(task)
             return null
         }
         task.parent_project.addTask(task.title, task.description, task.checked, task.priority, task.due_date)
