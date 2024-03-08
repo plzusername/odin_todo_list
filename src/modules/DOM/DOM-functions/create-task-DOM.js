@@ -1,4 +1,5 @@
 import { createElement } from "../utility/createElement";
+import { checkDOMchanges } from "../../Storage/itemStorage/taskStorage/checkTask";
 
 function createTask(task){
     const titleText=document.createTextNode(task.title)
@@ -24,6 +25,8 @@ function createTask(task){
     taskEdit.dataset.id = task.id
     taskDelete.dataset.id = task.id
     taskContainer.dataset.priority = task.priority
+    checkDOMchanges(task, taskContainer)
+
 
     return taskContainer
 
