@@ -5,27 +5,24 @@ import { redoIds } from '../../../Logic/redoIds'
 let removedNote
 
 function addProjectToStorage(){
-    Storage.notes.splice(event.target.closest('.note-container').dataset.id,1)
-    redoIds(Storage.notes)
+    Storage.notes = notesSection.notes
     return Storage
 }
 
 function removeNote(){
 
     const removeButton = event.target
-
     removedNote = notesSection.notes[removeButton.closest('.note-container').dataset.id]
-
-    notesSection.removeNote(removedNote)
-
-    saveStorage(addProjectToStorage)
 
     removeButton.closest('.note-container').remove()
 
     const DOM_notes = document.querySelectorAll('.note-container')
 
+    notesSection.removeNote(removedNote)
+
     redoIds(notesSection.notes, DOM_notes)
 
+    saveStorage(addProjectToStorage)
 
 }
 

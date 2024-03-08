@@ -8,7 +8,8 @@ import { saveStorage, Storage } from "../../Storage/storage-utils/save-storage";
 let generatedNote
 
 function addTaskToStorage(){
-    Storage.notes.push(generatedNote)
+    // Storage.notes.push(generatedNote)
+    Storage.notes = notesSection.notes
     return Storage
 }
 

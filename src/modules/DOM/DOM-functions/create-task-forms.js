@@ -8,14 +8,9 @@ let generatedTask
 let taskToBeEdited
 
 function addTaskToProjectStorage(){
-    // Storage.projects[window.currentTaskForm].tasks.push(generatedTask)
-    return Storage    
-}
-function EditTaskToStorage(){
-    Storage.projects[window.currentTaskForm].tasks[taskToBeEditedIndex] = taskToBeEdited
+    Storage.projects = viewAll.projects
     return Storage
 }
-
 
 function createGenerateTaskForm(){
     const formHeader=createElement({class:'task-form-header'}, 'h1', `task`, [])
@@ -130,7 +125,7 @@ function createEditTaskForm(){
         taskDueDateText.value = dueDateInput.value
         taskToBeEditedDOM.dataset.priority = priorityInput.value
 
-        saveStorage(EditTaskToStorage)
+        saveStorage(addTaskToProjectStorage)
 
         taskForm.classList.remove('visible')
 

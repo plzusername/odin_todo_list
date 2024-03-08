@@ -6,8 +6,7 @@ import { viewProjects } from '../accessibility/viewAllProjects'
 let removedProject
 
 function addProjectToStorage(){
-    Storage.projects.splice(removedProject.id, 1)
-    redoIds(Storage.projects)
+    Storage.projects = viewAll.projects
     return Storage
 }
 
@@ -23,8 +22,8 @@ function removeProjectFromPage(){
 
     removedProjectDOM.remove()
 
-    const parent_projects_tasks = document.querySelectorAll('.project-container')
-    redoIds(viewAll.projects, parent_projects_tasks)
+    const parent_projects = document.querySelectorAll('.project-container')
+    redoIds(viewAll.projects, parent_projects)
 
     correspondinngFilter.remove()
     const allFilters = document.querySelectorAll('.project-filter')

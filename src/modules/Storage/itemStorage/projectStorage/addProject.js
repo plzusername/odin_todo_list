@@ -10,7 +10,7 @@ let generatedProject
 
 
 function addProjectToStorage(){
-    Storage.projects.push(generatedProject)
+    Storage.projects = viewAll.projects
     return Storage
 }
 
