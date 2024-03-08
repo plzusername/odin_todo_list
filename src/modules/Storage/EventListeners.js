@@ -12,6 +12,7 @@ import { switchBetweenSections } from './itemStorage/accessibility/sectionSwitch
 import { showNoteForm } from './itemStorage/noteStorage/showNoteForm'
 import { removeNote } from './itemStorage/noteStorage/removeNote'
 import { reinstateFilters, domifyStorageProjects } from './itemStorage/projectStorage/domifyProjectStorage';
+import { showEditNoteForm } from './itemStorage/noteStorage/showEditNoteForm'
 
 document.addEventListener('DOMContentLoaded', ()=>{
     const addProjectButton = document.querySelector('.Add-project')
@@ -43,6 +44,7 @@ document.body.addEventListener('click',()=>{
         const checkTaskButtons = document.querySelectorAll('.task-check')
         const editTaskButtons = document.querySelectorAll('.task-edit-icon')
         const filterProjects = document.querySelectorAll('.project-filter')
+        const editNoteButtons = document.querySelectorAll('.note-edit-icon')
 
         addTaskButtons.forEach(addTaskButton => {
             addTaskButton.addEventListener('click',showCreateTaskForm)
@@ -62,9 +64,11 @@ document.body.addEventListener('click',()=>{
         filterProjects.forEach(projectFIlter =>{
             projectFIlter.addEventListener('click', filterProject)
         })
+
     
     }
     if(document.body.contains(document.querySelector('.Create-Note'))){
+        const editNoteButtons = document.querySelectorAll('.note-edit-icon')
         const showNoteAdderForm = document.querySelector('.Create-Note')
         const removeNotes = document.querySelectorAll('.note-delete-icon')
 
@@ -72,6 +76,10 @@ document.body.addEventListener('click',()=>{
         removeNotes.forEach(removeButton =>{
             removeButton.addEventListener('click', removeNote)
         })
+        editNoteButtons.forEach(editNoteButton => {
+            editNoteButton.addEventListener('click',showEditNoteForm)
+        })
+
 
     }
 
