@@ -74,5 +74,16 @@ document.body.addEventListener('click',()=>{
         })
 
     }
+
+    const formAffect = document.querySelector('.form-affect')
+    const forms = document.querySelectorAll('form')
+
+    formAffect.addEventListener('click', ()=>{
+        forms.forEach(form =>{
+            form.classList.remove('visible')
+        })
+        formAffect.classList.remove('form-affect-visible')
+    })
+
   
 })
