@@ -1,13 +1,17 @@
 import CircularJSON from "circular-json"
 
-let Storage = localStorage.getItem('Storage') == null ?  {
+const StorageStructure = {
     projects: [],
     trash: [],
     tempDateFiltered: [],
     notes: [],
     calendar: {}
-} : CircularJSON.parse(localStorage.getItem('Storage'))
+}
 
+let Storage = localStorage.getItem('Storage') == null ?
+    StorageStructure
+    : 
+    CircularJSON.parse(localStorage.getItem('Storage'))
 
 export {Storage}
 
