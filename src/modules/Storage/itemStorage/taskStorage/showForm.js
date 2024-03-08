@@ -4,6 +4,9 @@ function showCreateTaskForm(){
     taskFormElement.classList.add('visible')
 
     window.currentTaskForm = event.target.closest('.project-container').dataset.id
+
+    const formAffect = document.querySelector('.form-affect')
+    formAffect.classList.add('form-affect-visible')
 }
 
 export {showCreateTaskForm}

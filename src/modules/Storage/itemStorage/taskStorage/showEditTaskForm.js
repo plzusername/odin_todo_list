@@ -22,6 +22,9 @@ function showEditTaskForm(){
     descriptionInput.value = taskDescription
     priorityInput.value = taskPriority
     dateInput.value = taskDate
+
+    const formAffect = document.querySelector('.form-affect')
+    formAffect.classList.add('form-affect-visible')
     
 }
 
