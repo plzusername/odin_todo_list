@@ -68,6 +68,9 @@ function createGenerateTaskForm(){
 
         taskForm.classList.remove('visible')
 
+        const formAffect = document.querySelector('.form-affect')
+        formAffect.classList.remove('form-affect-visible')    
+
         event.preventDefault()
     })
 
@@ -129,6 +132,9 @@ function createEditTaskForm(){
 
         taskForm.classList.remove('visible')
 
+        const formAffect = document.querySelector('.form-affect')
+        formAffect.classList.remove('form-affect-visible')
+    
         event.preventDefault()
   
     })
