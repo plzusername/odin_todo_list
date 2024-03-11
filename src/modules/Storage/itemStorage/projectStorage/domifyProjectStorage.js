@@ -10,10 +10,6 @@ function domifyStorageProjects(){
 
     Storage.projects.forEach(project => {
         const DOMproject = projectDomify(project)
-        project.tasks.forEach(task =>{
-            const DOMtask = createTask(task)
-            DOMproject.appendChild(DOMtask)
-        })
         content.appendChild(DOMproject)
         DOMprojects.push(DOMproject)
     });
