@@ -49,13 +49,14 @@ function createGenerateTaskForm(){
 
     taskForm.addEventListener('submit',()=>{
 
-        const parentProject = document.querySelector(`.project-container[data-id="${window.currentTaskForm}"]`)
+        const parentProject = document.querySelector(`.project-container[data-id="${window.currentTaskForm}"]`).querySelector('.task-parent-container')
 
         generatedTask = new taskGenerator(titleInput.value , descriptionInput.value , {}, false ,  priorityInput.value , dueDateInput.value, )
 
         const parentProjectObject = viewAll.projects[window.currentTaskForm]
 
         parentProjectObject.addTask(generatedTask)
+
 
         saveStorage(addTaskToProjectStorage)
 
