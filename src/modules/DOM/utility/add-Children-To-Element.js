@@ -1,5 +1,7 @@
 export default function addChildrenToElement(parentElement, children){
-    children.forEach(child => {
-        parentElement.appendChild(child)
-    });
+    if(children.length != 0){
+        children.forEach(child => {
+            parentElement.appendChild(child)
+        });    
+    }
 }
