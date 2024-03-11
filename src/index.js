@@ -6,7 +6,7 @@ import { content } from './modules/DOM/generate-content/generate-content-section
 import '../src/modules/Styles/main.css'
 import { populateArrays } from './modules/Storage/storage-utils/populateArrays.js';
 import { formAffect } from './modules/DOM/generate-content/generate-content-section.js';
-window.projects = []
+import Sortable from 'sortablejs';
 
 document.body.appendChild(header)
 document.body.appendChild(sideBar)
@@ -15,6 +15,5 @@ document.body.appendChild(footer)
 document.body.appendChild(formAffect)
 
 populateArrays()
-// renderSotrage()
 
 import './modules/Storage/EventListeners.js'
