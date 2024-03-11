@@ -44,7 +44,7 @@ document.body.addEventListener('click',()=>{
         const checkTaskButtons = document.querySelectorAll('.task-check')
         const editTaskButtons = document.querySelectorAll('.task-edit-icon')
         const filterProjects = document.querySelectorAll('.project-filter')
-        const editNoteButtons = document.querySelectorAll('.note-edit-icon')
+        const tasks = document.querySelectorAll('.task-container')
 
         addTaskButtons.forEach(addTaskButton => {
             addTaskButton.addEventListener('click',showCreateTaskForm)
