@@ -1,8 +1,9 @@
+import { finishDraggingTracker, startDraggingTracker } from "../../Storage/itemStorage/taskStorage/changeTaskProject";
 import { createElement } from "../utility/createElement";
 import { createInputAdder } from "./create-input-adder";
+import { createTask } from "./create-task-DOM";
 
 function projectDomify(project){
-
     const projectName=createElement({class:'project-header'} ,'h1', project.title, [])
 
     const taskAdder=createInputAdder('Add task')
@@ -17,11 +18,28 @@ function projectDomify(project){
 
     const deleteTaskContainer = createElement({class:'delete-project-container'}, 'div', '', [deleteTaskText,delete_icon])
 
+    const tasks = project.tasks.map(task =>{
+        return createTask(task)
+    })
+
+    const taskContainer = createElement({class:'task-parent-container'}, 'div', '', ...[tasks])
+
     add_icon.dataset.id =project.id
 
-    const projectContainer=createElement({class:'project-container'}, 'div', '', [projectName, addTaskContainer, deleteTaskContainer])
+    const projectContainer=createElement({class:'project-container'}, 'div', '', [projectName, addTaskContainer, deleteTaskContainer, taskContainer])
     
     projectContainer.dataset.id=project.id
+
+    // const sortableTasks = Sortable.create(taskContainer, {
+    //     animation:150,
+    //     group:`project-list`,
+    //     onStart(evt){
+    //         startDraggingTracker(evt)
+    //     },
+    //     onEnd(evt){
+    //         finishDraggingTracker(evt)
+    //     }
+    // })
 
     return projectContainer
 
