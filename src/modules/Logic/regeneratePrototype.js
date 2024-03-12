@@ -1,11 +1,11 @@
 import { Storage } from "../Storage/storage-utils/save-storage"
 import { notesGenerator } from "./notes-generator";
-import { notesSection } from "./notes-section";
 import { projectGenerator } from "./project-Generator";
 import { taskGenerator } from "./task-generator";
 import { trashSection } from "./trash-section";
 
 function regeneratePrototype(){
+    console.log('Storage')
     const restoredStorage = {
         projects: [],
         trash: [],
@@ -26,14 +26,7 @@ function regeneratePrototype(){
         restoredStorage.projects.push(newProject)
 
     })
-    Array.prototype.addItem = function(title, description){
-        notesSection.notes.push(new notesGenerator(title, description))
-    }
-    Array.prototype.removeNote = function(note){
-        notesSection.notes.splice(note.id,1)
-        trashSection.addTrashedTask(note)    
-    }
-
+    
 
     return restoredStorage
 
