@@ -86,4 +86,18 @@
     --note-adder-margin:16px;
     --note-add-text-margin:12px;
 
+    /* Variables for trash section */
+
+    --trash-item-width:300px;
+    --trash-item-height:100px;
+    --trash-item-padding:5px;
+    --trash-item-margin:16px;
+    --trash-header-size:48px;
+    --trash-section-padding:24px;
+    --trash-section-border-radius:12px;
+    --trash-icons-gap:8px;
+    --trash-items-height:200px;
+    --trash-header-margin:8px;
+
+
 }
