@@ -6,7 +6,6 @@ class projectGenerator{
     constructor(title = `Project #${viewAll.projects.length + 1}`){
         this.title=title
         this.tasks=[]
-        this.id=viewAll.projects.length 
 
     }
 
