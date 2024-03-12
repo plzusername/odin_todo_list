@@ -30,17 +30,6 @@ function projectDomify(project){
     
     projectContainer.dataset.id=project.id
 
-    // const sortableTasks = Sortable.create(taskContainer, {
-    //     animation:150,
-    //     group:`project-list`,
-    //     onStart(evt){
-    //         startDraggingTracker(evt)
-    //     },
-    //     onEnd(evt){
-    //         finishDraggingTracker(evt)
-    //     }
-    // })
-
     return projectContainer
 
 }
