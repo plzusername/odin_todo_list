@@ -4,9 +4,6 @@ import { Storage, saveStorage } from "../../Storage/storage-utils/save-storage"
 import { content } from "../generate-content/generate-content-section"
 import { switchBetweenSections } from "../../Storage/itemStorage/accessibility/sectionSwitching";
 import { domifyStorageProjects } from "../../Storage/itemStorage/projectStorage/domifyProjectStorage";
-import Sortable from "sortablejs";
-import { projectDomify } from "./generate-DOM-project";
-import { projectGenerator } from "../../Logic/project-Generator";
 
 function filterDate(){
     return Storage
