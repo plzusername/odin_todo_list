@@ -4,6 +4,7 @@ import { content } from "../generate-content/generate-content-section";
 import { createElement } from "../utility/createElement";
 import { noteDomification } from "./noteDomification";
 import { saveStorage, Storage } from "../../Storage/storage-utils/save-storage";
+import { hideEffect } from "../generate-content/generate-content-section"
 
 let generatedNote
 let noteToBeEdited
@@ -48,10 +49,7 @@ function createGenerateNoteForm(){
 
         content.insertBefore(noteDOM, noteAdder)
 
-        noteForm.classList.remove('visible')
-
-        const formAffect = document.querySelector('.form-affect')
-        formAffect.classList.remove('form-affect-visible')
+        hideEffect(noteForm)
     
         event.preventDefault()
     })
@@ -93,10 +91,7 @@ function createEditNoteForm(){
 
         saveStorage(addTaskToStorage)
 
-        noteForm.classList.remove('visible')
-
-        const formAffect = document.querySelector('.form-affect')
-        formAffect.classList.remove('form-affect-visible')
+        hideEffect(noteForm)
     
         event.preventDefault()
   

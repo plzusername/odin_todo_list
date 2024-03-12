@@ -3,11 +3,13 @@ import { viewAll } from '../../Logic/view-all-projects'
 import { taskGenerator } from '../../Logic/task-generator'
 import { createTask } from '../../DOM/DOM-functions/create-task-DOM'
 import { Storage, saveStorage } from "../../Storage/storage-utils/save-storage"
+import { hideEffect } from "../generate-content/generate-content-section"
 
 let generatedTask
 let taskToBeEdited
 
 function addTaskToProjectStorage(){
+    console.log(viewAll.projects)
     Storage.projects = viewAll.projects
     return Storage
 }
@@ -49,28 +51,21 @@ function createGenerateTaskForm(){
 
     taskForm.addEventListener('submit',()=>{
 
-        const parentProject = document.querySelector(`.project-container[data-id="${window.currentTaskForm}"]`).querySelector('.task-parent-container')
+        const parentProject = document.querySelector(`.project-container[data-id="${+window.currentTaskForm}"]`).querySelector('.task-parent-container')
 
         generatedTask = new taskGenerator(titleInput.value , descriptionInput.value , {}, false ,  priorityInput.value , dueDateInput.value, )
 
-        const parentProjectObject = viewAll.projects[window.currentTaskForm]
+        const parentProjectObject = viewAll.projects[+window.currentTaskForm]
 
         parentProjectObject.addTask(generatedTask)
 
+        const DOM_task = createTask(generatedTask)
 
         saveStorage(addTaskToProjectStorage)
 
-        titleInput.value = ''
-        descriptionInput.value = ''
-        dueDateInput.value = null
-        priorityInput.selectedIndex = 0
+        parentProject.appendChild(DOM_task)
 
-        parentProject.appendChild(createTask(generatedTask))
-
-        taskForm.classList.remove('visible')
-
-        const formAffect = document.querySelector('.form-affect')
-        formAffect.classList.remove('form-affect-visible')    
+        hideEffect(taskForm)
 
         event.preventDefault()
     })
@@ -114,7 +109,8 @@ function createEditTaskForm(){
     
     formHeader.textContent = 'Edit Task'
     taskForm.addEventListener('submit' , ()=>{
-        const taskToBeEditedDOM = document.querySelector(`.task-container[data-id="${window.taskToBeEditedIndex}"]`)
+        const taskToBeEditedDOM = document.querySelector(`.project-container[data-id="${window.currentTaskForm}"]  .task-container[data-id="${window.taskToBeEditedIndex}"]`)
+        console.log(taskToBeEditedDOM, )
     
         taskToBeEdited = viewAll.projects[window.currentTaskForm].tasks[window.taskToBeEditedIndex]
 
@@ -131,11 +127,8 @@ function createEditTaskForm(){
 
         saveStorage(addTaskToProjectStorage)
 
-        taskForm.classList.remove('visible')
+        hideEffect(taskForm)
 
-        const formAffect = document.querySelector('.form-affect')
-        formAffect.classList.remove('form-affect-visible')
-    
         event.preventDefault()
   
     })
