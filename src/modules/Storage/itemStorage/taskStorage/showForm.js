@@ -1,12 +1,11 @@
+import { showEffect } from "../../../DOM/generate-content/generate-content-section"
+
 function showCreateTaskForm(){
     const taskFormElement = document.querySelector('.create-task-form')
 
-    taskFormElement.classList.add('visible')
-
     window.currentTaskForm = event.target.closest('.project-container').dataset.id
 
-    const formAffect = document.querySelector('.form-affect')
-    formAffect.classList.add('form-affect-visible')
+    showEffect(taskFormElement)
 }
 
 export {showCreateTaskForm}

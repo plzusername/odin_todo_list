@@ -1,7 +1,7 @@
+import { showEffect } from "../../../DOM/generate-content/generate-content-section"
+
 function showEditTaskForm(){
     const taskFormElement = document.querySelector('.edit-task-form')
-
-    taskFormElement.classList.add('visible')
 
     window.taskToBeEditedIndex = event.target.closest('.task-container').dataset.id
     window.currentTaskForm = event.target.closest('.project-container').dataset.id
@@ -23,8 +23,7 @@ function showEditTaskForm(){
     priorityInput.value = taskPriority
     dateInput.value = taskDate
 
-    const formAffect = document.querySelector('.form-affect')
-    formAffect.classList.add('form-affect-visible')
+    showEffect(taskFormElement)
     
 }
 
