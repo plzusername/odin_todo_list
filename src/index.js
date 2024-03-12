@@ -6,7 +6,6 @@ import { content } from './modules/DOM/generate-content/generate-content-section
 import '../src/modules/Styles/main.css'
 import { populateArrays } from './modules/Storage/storage-utils/populateArrays.js';
 import { formAffect } from './modules/DOM/generate-content/generate-content-section.js';
-import Sortable from 'sortablejs';
 
 document.body.appendChild(header)
 document.body.appendChild(sideBar)
