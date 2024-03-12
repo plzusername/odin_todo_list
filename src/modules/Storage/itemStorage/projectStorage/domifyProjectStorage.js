@@ -1,9 +1,7 @@
 import { content } from "../../../DOM/generate-content/generate-content-section"
 import { Storage } from "../../storage-utils/save-storage"
 import { projectDomify } from "../../../DOM/DOM-functions/generate-DOM-project";
-import { createTask } from "../../../DOM/DOM-functions/create-task-DOM";
 import { generateFilter } from "../../../DOM/DOM-functions/generate-filter";
-import { sideBar } from '../../../DOM/generate-content/generate-sideBar'
 
 function domifyStorageProjects(){
     const DOMprojects = []
@@ -17,10 +15,11 @@ function domifyStorageProjects(){
     return DOMprojects
 }
 function reinstateFilters(){
+    const sideBarProjects = document.querySelector('.sideBar-projects-section')
     Storage.projects.forEach(project => {
         const projectFilter = generateFilter(project.title, 'project-filter')
         projectFilter.dataset.id = project.id
-        sideBar.appendChild(projectFilter)
+        sideBarProjects.appendChild(projectFilter)
     });
 
 }
