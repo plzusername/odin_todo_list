@@ -1,6 +1,7 @@
 import { viewAll } from "../../Logic/view-all-projects"
 import { notesSection } from "../../Logic/notes-section"
 import { regeneratePrototype } from '../../Logic/regeneratePrototype'
+import { trashSection } from "../../Logic/trash-section"
 
 function populateArrays(){
     const regeneratedStorage = regeneratePrototype()
@@ -10,6 +11,9 @@ function populateArrays(){
 
     regeneratedStorage.projects.forEach(project => {
         viewAll.addProject(project)
+    });
+    regeneratedStorage.trash.forEach(trashedItem => {
+        trashSection.addTrashedTask(trashedItem)
     });
 }
 
