@@ -23,6 +23,7 @@ class viewAll{
     }
 
     static addProject(project){
+        project.id = viewAll.projects.length
         viewAll.projects.push(project)
 
     }
