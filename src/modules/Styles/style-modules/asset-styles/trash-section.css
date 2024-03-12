@@ -1,0 +1,47 @@
+@import url('../root-variables.css');
+
+.trash-section{
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);  
+    opacity: 0;
+    z-index: -1;
+    display: flex;
+    flex-direction:column ;
+    align-items: center;
+    background-color: white;
+    padding: var(--trash-section-padding);
+    border-radius: var(--trash-section-border-radius);
+    box-shadow: 0 0 10px 10px white;
+    width: 50%;
+}
+
+.trash-header{
+    font-size: var(--trash-header-size);
+    font-weight: bold;
+    margin: var(--trash-header-margin);
+}
+
+.trash-items-container > *{
+    width: var(--trash-item-width);
+    height: var(--trash-item-height);
+    box-sizing: initial;
+    padding: var(--trash-item-padding);
+    margin: var(--trash-item-margin);
+}
+
+.trash-icons{
+    align-self: center;
+    display: flex;
+    gap:var(--trash-icons-gap);
+}
+
+.trash-items-container{
+    width: 100%;
+    display: grid;
+    overflow: auto;
+    border: none;
+    justify-items: center;
+    height: var(--trash-items-height);
+}
