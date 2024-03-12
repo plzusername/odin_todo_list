@@ -1,7 +1,7 @@
+import { showEffect } from "../../../DOM/generate-content/generate-content-section"
+
 function showEditNoteForm(){
     const noteFormElement = document.querySelector('.edit-note-form')
-
-    noteFormElement.classList.add('visible')
 
     window.noteToBeEditedIndex = event.target.closest('.note-container').dataset.id
 
@@ -16,11 +16,7 @@ function showEditNoteForm(){
     titleInput.value = noteTitle
     descriptionInput.value = noteDescription
 
-    const formAffect = document.querySelector('.form-affect')
-    formAffect.classList.add('form-affect-visible')
-
-    console.log('HI')
-    
+    showEffect(noteFormElement)
 }
 
 export {showEditNoteForm}

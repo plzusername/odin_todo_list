@@ -1,10 +1,9 @@
+import { showEffect } from "../../../DOM/generate-content/generate-content-section"
+
 function showNoteForm(){
     const noteForm = document.querySelector('.create-note-form')
 
-    noteForm.classList.add('visible')
-
-    const formAffect = document.querySelector('.form-affect')
-    formAffect.classList.add('form-affect-visible')
+    showEffect(noteForm)
 }
 
 export { showNoteForm }
