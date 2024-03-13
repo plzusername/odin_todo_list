@@ -12,7 +12,7 @@ import { switchToNotesSection } from './itemStorage/accessibility/notesSectionFi
 import { switchBetweenSections } from './itemStorage/accessibility/sectionSwitching'
 import { showNoteForm } from './itemStorage/noteStorage/showNoteForm'
 import { removeNote } from './itemStorage/noteStorage/removeNote'
-import { reinstateFilters, domifyStorageProjects } from './itemStorage/projectStorage/domifyProjectStorage';
+import { reinstateFilters, domifyStorageProjects, domifyStorageTrash } from './itemStorage/projectStorage/domifyProjectStorage';
 import { showEditNoteForm } from './itemStorage/noteStorage/showEditNoteForm'
 import { showTrashSection } from './itemStorage/accessibility/showTrashSection'
 
@@ -38,6 +38,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
     domifyStorageProjects()
     reinstateFilters()
+    domifyStorageTrash()
 })
 
 document.body.addEventListener('click',()=>{
