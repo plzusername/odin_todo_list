@@ -88,7 +88,7 @@
 
     /* Variables for trash section */
 
-    --trash-item-width:300px;
+    --trash-item-width:80%;
     --trash-item-height:100px;
     --trash-item-padding:5px;
     --trash-item-margin:16px;
