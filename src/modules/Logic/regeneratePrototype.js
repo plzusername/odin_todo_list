@@ -2,10 +2,8 @@ import { Storage } from "../Storage/storage-utils/save-storage"
 import { notesGenerator } from "./notes-generator";
 import { projectGenerator } from "./project-Generator";
 import { taskGenerator } from "./task-generator";
-import { trashSection } from "./trash-section";
 
 function regeneratePrototype(){
-    console.log('Storage')
     const restoredStorage = {
         projects: [],
         trash: [],
@@ -24,7 +22,9 @@ function regeneratePrototype(){
             newProject.addTask(generatedTask)
         });
         restoredStorage.projects.push(newProject)
-
+    })
+    Storage.trash.forEach(trashedItem =>{
+        restoredStorage.trash.push(trashedItem.priority == undefined ? new notesGenerator(trashedItem.title, trashedItem.description) : new taskGenerator(trashedItem.title, trashedItem.description, trashedItem.parent_project, trashedItem.checked, trashedItem.priority, trashedItem.due_date))
     })
     
 
