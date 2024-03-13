@@ -9,4 +9,18 @@ function createTrashSection(){
     return trashContainer
 }
 
-export {createTrashSection}
+function repurposeIcons(trashedItem){
+    const icons = trashedItem.children[1].querySelectorAll('i')
+    const restoreFromTrashIcon = createElement({class:'restore-from-trash-icon fa-solid fa-trash-can-arrow-up'}, 'i', '', [])
+    const removeFromTrashIcon = createElement({class:'remove-from-trash-icon fa-regular fa-circle-xmark'}, 'i', '', [])
+    const trashIcons = [restoreFromTrashIcon , removeFromTrashIcon]
+
+    icons.forEach((icon, index) =>{
+        trashedItem.children[1].replaceChild(trashIcons[index], icon)
+    })
+
+
+    return trashedItem
+}
+
+export {createTrashSection, repurposeIcons}
