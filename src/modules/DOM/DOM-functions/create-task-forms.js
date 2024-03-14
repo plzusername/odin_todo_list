@@ -9,7 +9,6 @@ let generatedTask
 let taskToBeEdited
 
 function addTaskToProjectStorage(){
-    console.log(viewAll.projects)
     Storage.projects = viewAll.projects
     return Storage
 }

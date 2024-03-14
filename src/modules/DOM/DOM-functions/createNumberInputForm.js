@@ -4,6 +4,7 @@ import { Storage, saveStorage } from "../../Storage/storage-utils/save-storage"
 import { content } from "../generate-content/generate-content-section"
 import { switchBetweenSections } from "../../Storage/itemStorage/accessibility/sectionSwitching";
 import { domifyStorageProjects } from "../../Storage/itemStorage/projectStorage/domifyProjectStorage";
+import { hideEffect } from "../generate-content/generate-content-section";
 
 function filterDate(){
     return Storage
@@ -45,9 +46,7 @@ function createNumberInputForm(){
             })
         })
 
-        dayForm.classList.remove('visible')
-
-        titleInput.value = null
+        hideEffect(dayForm)
 
         event.preventDefault()
 
