@@ -32,7 +32,6 @@ function removeNote(){
     DOMremovedNote.remove()
 
     const DOM_notes = document.querySelectorAll('.content-section > .note-container')
-    console.log(DOM_notes)
 
     redoIds(notesSection.notes, DOM_notes)
 

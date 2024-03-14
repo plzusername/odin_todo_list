@@ -5,6 +5,7 @@ class notesSection{
     static notes=[]
 
     static addItem(note){
+        note.id = notesSection.notes.length
         notesSection.notes.push(note)
     }
     
