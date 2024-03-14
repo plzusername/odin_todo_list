@@ -11,6 +11,9 @@ function populateArrays(){
 
     regeneratedStorage.projects.forEach(project => {
         viewAll.addProject(project)
+        project.tasks.forEach(task =>{
+            task.parent_project = {id:project.id}
+        })
     });
     regeneratedStorage.trash.forEach(trashedItem => {
         trashSection.addTrashedTask(trashedItem)
