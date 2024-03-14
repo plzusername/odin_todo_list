@@ -20,7 +20,7 @@ function showEffect(formToShow){
 
 function hideEffect(formToHide){
     const formAffect = document.querySelector('.form-affect')
-    const delayTime = 300
+    const delayTime = 350
     formAffect.classList.remove('form-affect-visible')
     formToHide.classList.remove('visible')
     setTimeout(()=>{
