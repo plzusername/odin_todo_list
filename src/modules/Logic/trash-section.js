@@ -1,4 +1,6 @@
 import { notesSection } from "./notes-section"
+import { redoIds } from "./redoIds"
+import { viewAll } from "./view-all-projects"
 
 class trashSection{
     static trashedItems=[]
@@ -9,16 +11,19 @@ class trashSection{
 
     static removeFromTrash(task){
         trashSection.trashedItems.splice(task.id,1)
+        redoIds(trashSection.trashedItems)
     }
 
 
-    static restoreFromTrash(task){
+    static restoreItem(task){
+        
         trashSection.removeFromTrash(task)
         if ('editNote' in Object.getPrototypeOf(task)){
             notesSection.addItem(task)
             return null
         }
-        task.parent_project.addTask(task.title, task.description, task.checked, task.priority, task.due_date)
+        const parent_project = viewAll.projects[task.parent_project.id]
+        parent_project.addTask(task)
 
     }
 
