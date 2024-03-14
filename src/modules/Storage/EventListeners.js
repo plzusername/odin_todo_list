@@ -15,6 +15,8 @@ import { removeNote } from './itemStorage/noteStorage/removeNote'
 import { reinstateFilters, domifyStorageProjects, domifyStorageTrash } from './itemStorage/projectStorage/domifyProjectStorage';
 import { showEditNoteForm } from './itemStorage/noteStorage/showEditNoteForm'
 import { showTrashSection } from './itemStorage/accessibility/showTrashSection'
+import { restoreFromTrash } from './itemStorage/trashStorage/restoreFromTrash'
+import { removeFromTrash } from './itemStorage/trashStorage/removeFromTrash'
 
 document.addEventListener('DOMContentLoaded', ()=>{
     const addProjectButton = document.querySelector('.Add-project')
@@ -86,6 +88,17 @@ document.body.addEventListener('click',()=>{
         })
 
 
+    }
+    if(document.body.contains(document.querySelector('.restore-from-trash-icon'))){
+        const restoreFromTrashIcons = document.querySelectorAll('.restore-from-trash-icon')
+        const removeFromTrashIcons = document.querySelectorAll('.remove-from-trash-icon')
+
+        restoreFromTrashIcons.forEach(restoreFromTrashIcon =>{
+            restoreFromTrashIcon.addEventListener('click', restoreFromTrash)
+        })
+        removeFromTrashIcons.forEach(removeFromTrashIcon =>{
+            removeFromTrashIcon.addEventListener('click', removeFromTrash)
+        })
     }
 
     const formAffect = document.querySelector('.form-affect')
