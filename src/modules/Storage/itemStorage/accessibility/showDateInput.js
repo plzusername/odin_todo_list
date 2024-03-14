@@ -1,7 +1,9 @@
+import { showEffect } from "../../../DOM/generate-content/generate-content-section"
+
 function showNumberInput(){
     const dayFormElement = document.querySelector('.day-form')
 
-    dayFormElement.classList.add('visible')
+    showEffect(dayFormElement)
 
 }
 
