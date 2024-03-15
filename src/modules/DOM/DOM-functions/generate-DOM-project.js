@@ -1,7 +1,8 @@
-import { finishDraggingTracker, startDraggingTracker } from "../../Storage/itemStorage/taskStorage/changeTaskProject";
+import { MoveItem } from "../../Storage/itemStorage/taskStorage/changeTaskProject";
 import { createElement } from "../utility/createElement";
 import { createInputAdder } from "./create-input-adder";
 import { createTask } from "./create-task-DOM";
+import Sortable from "sortablejs";
 
 function projectDomify(project){
     const projectName=createElement({class:'project-header'} ,'h1', project.title, [])
@@ -23,6 +24,14 @@ function projectDomify(project){
     })
 
     const taskContainer = createElement({class:'task-parent-container'}, 'div', '', ...[tasks])
+
+    new Sortable(taskContainer, {
+        animation:150,
+        group:'task-containers',
+        onEnd(evt){
+            MoveItem(evt)
+        }
+    })
 
     add_icon.dataset.id =project.id
 
