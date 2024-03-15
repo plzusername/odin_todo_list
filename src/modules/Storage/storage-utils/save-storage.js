@@ -3,9 +3,7 @@ import CircularJSON from "circular-json"
 const StorageStructure = {
     projects: [],
     trash: [],
-    tempDateFiltered: [],
     notes: [],
-    calendar: {}
 }
 
 let Storage = localStorage.getItem('Storage') == null ?
