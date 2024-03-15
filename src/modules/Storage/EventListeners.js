@@ -17,12 +17,14 @@ import { showEditNoteForm } from './itemStorage/noteStorage/showEditNoteForm'
 import { showTrashSection } from './itemStorage/accessibility/showTrashSection'
 import { restoreFromTrash } from './itemStorage/trashStorage/restoreFromTrash'
 import { removeFromTrash } from './itemStorage/trashStorage/removeFromTrash'
+import { showCalendar } from './itemStorage/accessibility/showCalendar'
 
 document.addEventListener('DOMContentLoaded', ()=>{
     const addProjectButton = document.querySelector('.Add-project')
     const viewAllProjects = document.querySelector('.view-all-filter')
     const dateFilter = document.querySelector('.time-filter')
     const notesSection = document.querySelector('.notes-section')
+    const calendarFIlter = document.querySelector('.calendar-filter')
     const trashSection = document.querySelector('.trash-filter')
     const sectionFilters = document.querySelectorAll('.filter-container:not(.project-filter):not(.time-filter):not(.trash-filter)')
 
@@ -37,6 +39,8 @@ document.addEventListener('DOMContentLoaded', ()=>{
     notesSection.addEventListener('click', switchToNotesSection)
 
     trashSection.addEventListener('click', showTrashSection)
+
+    calendarFIlter.addEventListener('click', showCalendar)
 
     domifyStorageProjects()
     reinstateFilters()
@@ -68,13 +72,12 @@ document.body.addEventListener('click',()=>{
         editTaskButtons.forEach(editTaskButton =>{
             editTaskButton.addEventListener('click',showEditTaskForm)
         })
-        filterProjects.forEach(projectFIlter =>{
-            projectFIlter.addEventListener('click', filterProject)
+        filterProjects.forEach(projectFilter =>{
+            projectFilter.addEventListener('click', filterProject)
         })
 
     
-    }
-    if(document.body.contains(document.querySelector('.Create-Note'))){
+    }    if(document.body.contains(document.querySelector('.Create-Note'))){
         const editNoteButtons = document.querySelectorAll('.note-edit-icon')
         const showNoteAdderForm = document.querySelector('.Create-Note')
         const removeNotes = document.querySelectorAll('.note-delete-icon')
