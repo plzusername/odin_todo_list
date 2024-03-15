@@ -21,9 +21,9 @@ class projectGenerator{
         redoIds(this.tasks)
     }
 
-    changeProject(newProjectDestination, taskToBeMoved){
+    changeProject(newProjectDestination, taskToBeMoved, taskNewPosition){
         this.removeTask(taskToBeMoved)
-        newProjectDestination.addTask(taskToBeMoved)
+        newProjectDestination.tasks.splice(taskNewPosition, 0, taskToBeMoved)
     }
 
 }
