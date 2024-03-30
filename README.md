@@ -17,6 +17,9 @@ The main topics I practiced in this project include the following:
 - JSON functions
 - SVG importing
 
+## Live preview
+
+To view a live preview of this project, press [this link](https://plzusername.github.io/odin_todo_list.com)
 
 ## deployment
 

@@ -29,7 +29,9 @@
     "@fullcalendar/timegrid": "^6.1.11",
     "circular-json": "^0.5.9",
     "date-fns": "^3.3.1",
+    "express": "^4.19.2",
     "lodash": "^4.17.21",
+    "mongoose": "^8.2.4",
     "sortablejs": "^1.15.2"
   }
 }
