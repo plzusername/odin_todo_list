@@ -16,3 +16,4 @@ document.body.appendChild(formAffect)
 populateArrays()
 
 import './modules/Storage/EventListeners.js'
+import './modules/DOM/DOM-functions/constraint-API.js'
