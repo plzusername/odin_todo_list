@@ -16,11 +16,11 @@ function addTaskToProjectStorage(){
 function createGenerateTaskForm(){
     const formHeader=createElement({class:'task-form-header'}, 'h1', `task`, [])
 
-    const titleInput=createElement({class:'title-input-task-create', maxlength:'40'}, 'input', '', [])
+    const titleInput=createElement({class:'title-input-task-create'}, 'input', '', [])
     titleInput.required=true
     const titleInputSection=createElement({class:'title-input-task-section'}, 'label', 'Title:', [titleInput])
 
-    const descriptionInput=createElement({class:'description-input-task-create', maxlength:'70'}, 'input', '', [])
+    const descriptionInput=createElement({class:'description-input-task-create'}, 'input', '', [])
     descriptionInput.required=true
     const descriptionInputSection=createElement({class:'description-input-task-section'}, 'label', 'Description:', [descriptionInput])
 
@@ -37,7 +37,7 @@ function createGenerateTaskForm(){
 
     const priorityInputSection=createElement({class:'priority-input-task-section'}, 'label', 'Priority:', [priorityInput])
 
-    const dueDateInput=createElement({class:'due-date-input-task-create', type:'date'}, 'input', '', [])
+    const dueDateInput=createElement({class:'due-date-input-task-create', type:'date', min:new Date().toISOString().split('T')[0]}, 'input', '', [])
     dueDateInput.required=true
     const dueDateInputSection=createElement({class:'due-date-input-task-section'}, 'label', 'Due Date:', [dueDateInput])
 
@@ -48,7 +48,7 @@ function createGenerateTaskForm(){
     
     formHeader.textContent = 'Create Task'
 
-    taskForm.addEventListener('submit',()=>{
+    taskForm.addEventListener('submit',(event)=>{
 
         const parentProject = document.querySelector(`.project-container[data-id="${+window.currentTaskForm}"]`).querySelector('.task-parent-container')
 
@@ -76,11 +76,11 @@ function createGenerateTaskForm(){
 function createEditTaskForm(){
     const formHeader=createElement({class:'task-form-header'}, 'h1', `task`, [])
 
-    const titleInput=createElement({class:'title-input-task-edit', maxlength:'40'}, 'input', '', [])
+    const titleInput=createElement({class:'title-input-task-edit'}, 'input', '', [])
     titleInput.required=true
     const titleInputSection=createElement({class:'title-input-task-section'}, 'label', 'Title:', [titleInput])
 
-    const descriptionInput=createElement({class:'description-input-task-edit', maxlength:'70'}, 'input', '', [])
+    const descriptionInput=createElement({class:'description-input-task-edit'}, 'input', '', [])
     descriptionInput.required=true
     const descriptionInputSection=createElement({class:'description-input-task-section'}, 'label', 'Description:', [descriptionInput])
 
@@ -97,7 +97,7 @@ function createEditTaskForm(){
 
     const priorityInputSection=createElement({class:'priority-input-task-section'}, 'label', 'Priority:', [priorityInput])
 
-    const dueDateInput=createElement({class:'due-date-input-task-edit', type:'date'}, 'input', '', [])
+    const dueDateInput=createElement({class:'due-date-input-task-edit', type:'date', min:new Date().toISOString().split('T')[0]}, 'input', '', [])
     dueDateInput.required=true
     const dueDateInputSection=createElement({class:'due-date-input-task-section'}, 'label', 'Due Date:', [dueDateInput])
 
